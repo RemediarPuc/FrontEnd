@@ -1,0 +1,144 @@
+<div class="solicitar">
+
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="col-12 col-sm-1 col-xs-12 col-md-1 col-lg-1">
+                <img class="logo" src="../../assets/imagens/logo.png" id="icon" alt="User Icon">
+            </div>
+
+            <div class="col-10 col-sm-4 col-xs-12 col-md-6 col-lg-10">
+                <div class="navbar-nav justify-content-center">
+                    <h1 class="font-weight-bold">Solicitar Medicamentos</h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="solicitacao-form">
+        <form (ngSubmit)="submit()" [formGroup]="dadosSolicitacaoForm" #formDir="ngForm">
+            <div class="row mb-6 ">
+                <label for="descricao" class="col-md-12 labelInput">Nome da medicação conforme especificado na
+                    receita:</label>
+                <div class="col-md-3">
+                    <input type="text" id="nomeMedicacao" name="nomeMedicacao" formControlName="nomeMedicacao"
+                        [ngClass]="{'inputError':formDir.submitted && dadosSolicitacaoForm.controls['nomeMedicacao'].hasError('required')}">
+                </div>
+                <div class="col-md-8">
+                    <p *ngIf="formDir.submitted && dadosSolicitacaoForm.controls['nomeMedicacao'].hasError('required')"
+                        class="mensagem-error col-md-4">*Informe o nome do medicamento</p>
+                </div>
+
+            </div>
+            <div class="row mb-2">
+                <label for="descricao" class="col-md-12 labelInput">Dosagem:</label>
+                <div class="col-md-2">
+                    <input type="text" id="descricao" name="descricao" formControlName="descricao">
+                </div>
+                <div class="col-md-4">
+                    <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['descricao'].hasError('required')"
+                        class=" mensagem-error col-md-4">*Informe a dosagem do medicamento</p> -->
+                </div>
+
+            </div>
+            <div class="row mb-2">
+                <label for="descricao" class="col-md-12 labelInput">Unidade:</label>
+                <div class="col-md-2">
+                    <select id="inputComprimido" class="col-md-2">
+                        <option selected>Ampolas</option>
+                        <option>Cápsulas</option>
+                        <option >Comprimidos</option>
+                        <option>Gotas</option>
+                        <option>Injeções</option>
+                        <option>Mililitros (ml)</option>
+                        <option>Pomadas ou cremes</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row mb-2">
+                <label for="descricao" class="col-md-12 labelInput">Quantidade indicada na receita:</label>
+                <div class="col-md-1">
+                    <input type="text" id="descricao" name="descricao" formControlName="descricao">
+                </div>
+                <div class="col-md-4">
+                    <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['descricao'].hasError('required')"
+                        class=" mensagem-error col-md-4">*Informe a quantidade de medicamento indicada na receita</p> -->
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <label for="descricao" class="col-md-12 labelInput">Medicamento de uso contínuo?</label>
+                <div class="col-md-4 radio-label">
+                    <input type="radio" id="opcao-sim" name="usoContinuo" value="S" checked>
+                    <span>Sim</span>
+
+                    <input type="radio" id="opcao-nao" name="usoContinuo" value="N">
+                    <span>Não</span>
+                </div>
+            </div>
+            <div class="col-md-9 mb-2 dadosRetirada">
+                <div class="tituloEndereco">
+                    <p>Escolha o local para retirada:</p>
+                </div>
+                <div class="row infosEndereco">
+                    <div class="row">
+                        <div class="col-md-6 radio-label">
+                            <input type="radio" id="opcao-2" name="endereco" value="2" checked>
+                            <span>CENTRO - RUA CARIJOS, 141 - 2º ANDAR (DENTRO DO SINDMAR) - CENTRO BH</span>
+                        </div>
+                        
+                        <div class="col-md-6 radio-label">
+                            <input type="radio" id="opcao-2" name="endereco" value="2">
+                            <span>RUA FERREIRA DE AGUIAR, 289, NAZARE</span>
+                        </div>
+                    </div>
+                    <div class="row infoHorarios">
+                        <div class="col-md-6">
+                            <!-- <img class="imgRelogio" src="../../assets/imagens/iconeRelogio.png" id="icon"
+                            alt="User Icon"> -->
+                            <span><b>Horário: </b>SEG a QUI de 9:00 às 16:00</span>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <!-- <img class="imgRelogio" src="../../assets/imagens/iconeRelogio.png" id="icon"
+                                alt="User Icon"> -->
+                            <span><b>Horário: </b> SEG a QUI de 9:30 às 15:30</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mb-2 dadosUsuario">
+                <div class="tituloDadosUsuario">
+                    <p>Confirme suas informações:</p>
+                </div>
+                <div class="row camposInfoUsuario">
+                    <label for="descricao" class="col-md-2 labelInput">Nome:</label>
+                    <div class="col-md-6">
+                        <input type="text" id="descricao" name="descricao" formControlName="descricao">
+                    </div>
+                    <div class="col-md-4">
+                        <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['descricao'].hasError('required')"
+                            class=" mensagem-error col-md-4">*Obrigatório</p> -->
+                    </div>
+                </div>
+                <div class="row camposInfoUsuario">
+                    <label for="descricao" class="col-md-2 labelInput">Telefone:</label>
+                    <div class="col-md-4">
+                        <input type="tel" id="descricao" name="descricao" formControlName="descricao">
+                    </div>
+                    <div class="col-md-4">
+                        <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['telefone'].hasError('required')"
+                            class=" mensagem-error col-md-4">*Informe o seu telefone</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2 botoes">
+                <button type="submit" class="btnSolicitar">Solicitar</button>
+                <button class="btnCancelar">Cancelar</button>
+
+            </div>
+
+        </form>
+    </div>
+</div>

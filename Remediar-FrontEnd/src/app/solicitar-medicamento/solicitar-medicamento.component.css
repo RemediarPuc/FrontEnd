@@ -1,0 +1,169 @@
+.solicitar {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+header {
+    background-color: #52AADC;
+    background-color: #52AADC;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    width: 60px;
+    margin-left: 10px;
+}
+
+.solicitacao-form {
+    margin-top: 70px;
+    padding-left: 1.5rem;
+    font-family: Raleway, sans-serif;
+    color: black;
+    border-color: #F40E0E;
+    border-style: inherit;
+}
+
+.form-control {
+    height: 35px;
+}
+
+.labelInput {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    width: 50px;
+    height: 26px;
+}
+
+input[type="radio"]:checked {
+    background-color: rgb(90, 190, 50);
+    color: white;
+    border-radius: 5px;
+}
+
+
+.radio-label {
+    display: flex;
+    cursor: pointer;
+}
+
+.dadosRetirada {
+    background: linear-gradient(to bottom, #67BC99 80%, #67BC99 100%);
+    margin-top: 25px;
+    height: auto;
+}
+
+.infosEndereco{
+    padding: 15px 5px 30px 5px;
+    font-size: 18px;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), select {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+input, select{
+    margin-left: 15px;
+}
+
+
+.infoHorarios{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+input:focus {
+    outline: none;
+    /* Remove a borda padrão de foco */
+    box-shadow: 0 0 5px rgba(130, 214, 81, 0.3);
+
+}
+
+select{
+    font-size: 15px;
+    padding: 5px;
+}
+
+.tituloEndereco {
+    background-color: #439472;
+}
+
+.imgRelogio {
+    width: 25px;
+    height: 25px;
+}
+
+
+.dadosUsuario {
+    background: #67BC99;
+    margin-top: 20px;
+    height: auto;
+}
+
+.camposInfoUsuario{
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.tituloDadosUsuario {
+    background-color: #5DAF8D;
+}
+
+.tituloDadosUsuario p,
+.tituloEndereco p {
+    margin: 15px;
+    font-size: 25px;
+}
+
+.botoes {
+    text-align: center;
+    flex: 1;
+    display: block;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+.btnCancelar {
+    background-color: #F40E0E;
+}
+
+.btnSolicitar {
+    background-color: #106C9E;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 10px 30px 10px 25px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+    margin: 10px 30px 2px 5px;
+    width: auto;
+}
+
+.inputError {
+    border: 2px solid rgb(240, 14, 14, 0.9);
+    color: #F40E0E;
+}
+
+.mensagem-error {
+    margin-left: 20px;
+    font-size: 18px;
+    color: #F40E0E;
+}
