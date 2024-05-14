@@ -1,0 +1,56 @@
+.emitirRelatorios {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+    color: #fff;
+    padding: 20px;
+    
+}
+
+
+header {
+    background-color: #52AADC;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.cards{
+    justify-content: center;
+}
+
+.corpo{
+    margin-top: 100px;
+}
+
+.card-custom {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.logo {
+    width: 60px;
+    margin-left: 10px;
+}
+
+.card-img-top{
+    width: 150px;
+    height: 100px;
+}
+
+.card-custom {
+    border-radius: 15px;
+    overflow: hidden;
+    height:250px;
+}
+
+.text-custom {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
