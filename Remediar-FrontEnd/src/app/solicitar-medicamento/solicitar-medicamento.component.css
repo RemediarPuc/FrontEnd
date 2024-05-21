@@ -3,28 +3,24 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     background: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
     color: #fff;
-    padding: 20px;
 }
 
 header {
     background-color: #52AADC;
-    background-color: #52AADC;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 
 .logo {
-    width: 60px;
+    width: 70px;
     margin-left: 10px;
 }
 
 .solicitacao-form {
     margin-top: 70px;
-    padding-left: 1.5rem;
+    margin: 1.5rem;
     font-family: Raleway, sans-serif;
     color: black;
     border-color: #F40E0E;
@@ -51,10 +47,12 @@ input[type="radio"]:checked {
     border-radius: 5px;
 }
 
-
 .radio-label {
     display: flex;
-    cursor: pointer;
+}
+
+.teste{
+    display: block;
 }
 
 .dadosRetirada {
@@ -64,11 +62,11 @@ input[type="radio"]:checked {
 }
 
 .infosEndereco{
-    padding: 15px 5px 30px 5px;
+    padding: 10px 5px 15px 1px;
     font-size: 18px;
 }
 
-input:not([type="radio"]):not([type="checkbox"]), select {
+input:not([type="radio"]):not([type="checkbox"]), :not(.dadosUsuario) select {
     width: 100%;
     margin-top: 10px;
     border: none;
@@ -83,12 +81,11 @@ input, select{
 
 .infoHorarios{
     margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 input:focus {
     outline: none;
-    /* Remove a borda padrão de foco */
     box-shadow: 0 0 5px rgba(130, 214, 81, 0.3);
 
 }
@@ -164,6 +161,7 @@ button {
 
 .mensagem-error {
     margin-left: 20px;
+    margin-top: 10px;
     font-size: 18px;
     color: #F40E0E;
 }

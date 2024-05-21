@@ -2,11 +2,11 @@
 
     <header class="header">
         <nav class="navbar navbar-expand-lg">
-            <div class="col-12 col-sm-1 col-xs-12 col-md-1 col-lg-1">
+            <div class="col-md-12 col-2 col-sm-1 col-xs-12 col-md-1 col-lg-1">
                 <img class="logo" src="../../assets/imagens/logo.png" id="icon" alt="User Icon">
             </div>
 
-            <div class="col-10 col-sm-4 col-xs-12 col-md-6 col-lg-10">
+            <div class="col-md-10 col-9 col-sm-4 col-xs-12 col-md-6 col-lg-10">
                 <div class="navbar-nav justify-content-center">
                     <h1 class="font-weight-bold">Solicitar Medicamentos</h1>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="col-md-2">
                     <input type="text" id="descricao" name="descricao" formControlName="descricao">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['descricao'].hasError('required')"
                         class=" mensagem-error col-md-4">*Informe a dosagem do medicamento</p> -->
                 </div>
@@ -60,7 +60,7 @@
                 <div class="col-md-1">
                     <input type="text" id="descricao" name="descricao" formControlName="descricao">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['descricao'].hasError('required')"
                         class=" mensagem-error col-md-4">*Informe a quantidade de medicamento indicada na receita</p> -->
                 </div>
@@ -76,58 +76,52 @@
                     <span>Não</span>
                 </div>
             </div>
-            <div class="col-md-9 mb-2 dadosRetirada">
+            <div class="col-md-8 mb-2 dadosRetirada">
                 <div class="tituloEndereco">
                     <p>Escolha o local para retirada:</p>
                 </div>
-                <div class="row infosEndereco">
-                    <div class="row">
-                        <div class="col-md-6 radio-label">
-                            <input type="radio" id="opcao-2" name="endereco" value="2" checked>
-                            <span>CENTRO - RUA CARIJOS, 141 - 2º ANDAR (DENTRO DO SINDMAR) - CENTRO BH</span>
-                        </div>
-                        
-                        <div class="col-md-6 radio-label">
-                            <input type="radio" id="opcao-2" name="endereco" value="2">
-                            <span>RUA FERREIRA DE AGUIAR, 289, NAZARE</span>
-                        </div>
+                <div class="row radio-label infosEndereco">
+                    <div class="col-md-6 radio-label">
+                        <input type="radio" id="opcao-2" name="endereco" value="2" checked>
+                        <span>CENTRO - RUA CARIJOS, 141 - 2º ANDAR <br>(DENTRO DO SINDMAR) - CENTRO BH</span>
                     </div>
-                    <div class="row infoHorarios">
-                        <div class="col-md-6">
-                            <!-- <img class="imgRelogio" src="../../assets/imagens/iconeRelogio.png" id="icon"
-                            alt="User Icon"> -->
-                            <span><b>Horário: </b>SEG a QUI de 9:00 às 16:00</span>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <!-- <img class="imgRelogio" src="../../assets/imagens/iconeRelogio.png" id="icon"
-                                alt="User Icon"> -->
-                            <span><b>Horário: </b> SEG a QUI de 9:30 às 15:30</span>
-                        </div>
-                        
+                    
+                    <div class="col-md-6">
+                        <span><b>Horário: </b>SEG a QUI de 9:00 às 16:00</span>
                     </div>
                 </div>
+                <div class="row radio-label infosEndereco">
+                    <div class="col-md-6 radio-label">
+                        <input type="radio" id="opcao-2" name="endereco" value="2" checked>
+                        <span>RUA FERREIRA DE AGUIAR, 289, NAZARE</span>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <span><b>Horário: </b> SEG a QUI de 9:30 às 15:30</span>
+                    </div>
+                </div>
+                
             </div>
-            <div class="col-6 mb-2 dadosUsuario">
+            <div class="col-md-6 mb-2 dadosUsuario">
                 <div class="tituloDadosUsuario">
                     <p>Confirme suas informações:</p>
                 </div>
                 <div class="row camposInfoUsuario">
                     <label for="descricao" class="col-md-2 labelInput">Nome:</label>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-9">
                         <input type="text" id="descricao" name="descricao" formControlName="descricao">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['descricao'].hasError('required')"
                             class=" mensagem-error col-md-4">*Obrigatório</p> -->
                     </div>
                 </div>
-                <div class="row camposInfoUsuario">
+                <div class="row camposInfoUsuario mb-2">
                     <label for="descricao" class="col-md-2 labelInput">Telefone:</label>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-6">
                         <input type="tel" id="descricao" name="descricao" formControlName="descricao">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8 mb-2">
                         <!-- <p *ngIf="formDir.submitted && lancamentoForm.controls['telefone'].hasError('required')"
                             class=" mensagem-error col-md-4">*Informe o seu telefone</p> -->
                     </div>
@@ -135,8 +129,10 @@
             </div>
             <div class="row mb-2 botoes">
                 <button type="submit" class="btnSolicitar">Solicitar</button>
-                <button class="btnCancelar">Cancelar</button>
-
+                <a routerLink (click)="goBack()">
+                    <button class="btnCancelar">Cancelar</button>
+                </a>
+                
             </div>
 
         </form>
