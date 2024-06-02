@@ -1,0 +1,119 @@
+body {
+  background-image: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00aaff;
+  padding: 5px 20px;
+}
+
+.header .logo img {
+  height: 60px;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header nav ul li {
+  display: inline;
+  font-size: 20px;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.container_inicio{
+  padding: 40px 20px;
+}
+.img_cover_remediar{
+  width: 100%;
+}
+.video-section {
+  display: flex;
+  padding: 20px;
+}
+
+.video-section .video {
+  position: relative;
+}
+
+.video-section .video img {
+  width: 100%;
+}
+
+
+.video-section .video-description {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.depoimentos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.card {
+  height: 320px; /* Defina o tamanho desejado */
+  width: calc(33.33% - 20px);
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card img {
+  width: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 18px;
+}
+.footer {
+  background-color: #00aaff;
+  padding: 20px;
+  text-align: center;
+}
+
+.redes-sociais {
+  margin-bottom: 20px;
+}
+
+.redes-sociais a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.redes-sociais .icon {
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
+}
+
+.logo-remediar img {
+  height: 60px; /* Defina o tamanho desejado para a logo */
+}
+
+
+
+
