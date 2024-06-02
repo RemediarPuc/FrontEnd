@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SolicitarMedicamentoComponent } from './components/solicitar-medicamento/solicitar-medicamento.component';
 import { EmissaoRelatoriosComponent } from './components/emissao-relatorios/emissao-relatorios.component';
 import { DoacaoDeMedicamentoComponent } from './components/doacao-de-medicamento/doacao-de-medicamento.component';
+import { HistoricoDoadoresComponent } from './components/historico-doadores/historico-doadores.component';
 
 export const routes: Routes = [
     {
@@ -22,5 +23,10 @@ export const routes: Routes = [
     {
         path: 'DoacaoMedicamento',
         component: DoacaoDeMedicamentoComponent
+    },
+    {
+        path:'HistoricoDoadores',
+        component: HistoricoDoadoresComponent
     }
 ]
+
