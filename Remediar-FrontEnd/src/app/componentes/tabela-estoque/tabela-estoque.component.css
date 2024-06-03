@@ -2,5 +2,46 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: aqua;
 }
+header, footer, main{
+    background-color: #B0E1E8;
+    padding: 1cm;
+}
+
+/* Cabeçalho */
+#logo{
+    width: 90px;
+    height: 90px;
+}
+
+/* Corpo */
+main{
+    background-image: linear-gradient(to top, #8ECCE1, #F9F9F9);
+}
+#campo_pesquisa input{
+    margin-right: 10px;
+}
+table{
+    border-top: none!important;
+    background-color: #F9F9F9;
+    border-collapse: separate;
+    border-spacing: 0.5cm;
+    margin-bottom: 0.5cm;
+    width: 100%;
+}
+table,#titulo_tabela{
+    border: 2px solid #171a21;
+}
+#titulo_tabela{
+    padding: 5px;
+    background-color: #53B0E3;
+    margin-top: 0.5cm;
+}
+#titulo_tabela h2, td, th{
+    text-align: center;
+}
+#btns button{
+    margin-right: 0.5cm;
+}
+
+/* Rodapé */
