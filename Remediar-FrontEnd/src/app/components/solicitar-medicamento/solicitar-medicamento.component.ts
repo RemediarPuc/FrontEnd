@@ -19,7 +19,16 @@ export class SolicitarMedicamentoComponent {
 
   ngOnInit(): void{
     this.dadosSolicitacaoForm = this.formBuilder.group({
-      nomeMedicacao: ['', Validators.required]
+        nomeMedicamento : ['', Validators.required],
+        dosagem         : ['', Validators.required],
+        unidade         : ['', Validators.required],
+        quantidade      : ['', Validators.required],
+        usoContinuo     : ['N', Validators.required],
+        endereco        : ['1', Validators.required],
+        nomeUsuario     : ['', Validators.required],
+        telefone        : ['', [Validators.required, Validators.pattern('^[0-9]{10,11}$')]],
+        data            : ['', Validators.required],
+        dataRetirada    : ['', Validators.required]
     })
   }
 

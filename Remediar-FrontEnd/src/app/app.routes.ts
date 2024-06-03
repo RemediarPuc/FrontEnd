@@ -5,8 +5,13 @@ import { SolicitarMedicamentoComponent } from './components/solicitar-medicament
 import { EmissaoRelatoriosComponent } from './components/emissao-relatorios/emissao-relatorios.component';
 import { DoacaoDeMedicamentoComponent } from './components/doacao-de-medicamento/doacao-de-medicamento.component';
 import { HistoricoDoadoresComponent } from './components/historico-doadores/historico-doadores.component';
+import { TelaInicialComponent } from './components/tela-inicial/tela-inicial.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        component: TelaInicialComponent
+    },
     {
         path: 'login',
         component: LoginComponent
@@ -29,4 +34,3 @@ export const routes: Routes = [
         component: HistoricoDoadoresComponent
     }
 ]
-
