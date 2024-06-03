@@ -3731,7 +3731,7 @@ function isPlatformBrowser(platformId) {
 function isPlatformServer(platformId) {
   return platformId === PLATFORM_SERVER_ID;
 }
-var VERSION = new Version("17.3.5");
+var VERSION = new Version("17.3.10");
 var _ViewportScroller = class _ViewportScroller {
 };
 _ViewportScroller.ɵprov = ɵɵdefineInjectable({
@@ -8875,14 +8875,14 @@ export {
 
 @angular/common/fesm2022/common.mjs:
   (**
-   * @license Angular v17.3.5
+   * @license Angular v17.3.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/common/fesm2022/http.mjs:
   (**
-   * @license Angular v17.3.5
+   * @license Angular v17.3.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
@@ -8894,4 +8894,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-ZQYC46LV.js.map
+//# sourceMappingURL=chunk-EPXZY5ID.js.map
