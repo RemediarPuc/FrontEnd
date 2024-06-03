@@ -1,5 +1,7 @@
 body {
   background-image: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
 .header {
@@ -30,12 +32,25 @@ body {
   text-decoration: none;
 }
 
-.container_inicio{
+.section {
   padding: 40px 20px;
 }
-.img_cover_remediar{
+
+.section-title {
+  font-weight: 600;
+  font-size: 40px;
+  padding: 5px 20px;
+}
+
+.section-text {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.img_cover_remediar {
   width: 100%;
 }
+
 .video-section {
   display: flex;
   padding: 20px;
@@ -44,11 +59,6 @@ body {
 .video-section .video {
   position: relative;
 }
-
-.video-section .video img {
-  width: 100%;
-}
-
 
 .video-section .video-description {
   margin-left: 20px;
@@ -64,7 +74,7 @@ body {
 }
 
 .card {
-  height: 320px; /* Defina o tamanho desejado */
+  height: 320px;
   width: calc(33.33% - 20px);
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -88,6 +98,7 @@ body {
 .card p {
   font-size: 18px;
 }
+
 .footer {
   background-color: #00aaff;
   padding: 20px;
@@ -97,7 +108,11 @@ body {
 .redes-sociais {
   margin-bottom: 20px;
 }
-
+.user_login .icon{
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
+}
 .redes-sociais a {
   color: #fff;
   text-decoration: none;
@@ -111,9 +126,5 @@ body {
 }
 
 .logo-remediar img {
-  height: 60px; /* Defina o tamanho desejado para a logo */
+  height: 60px;
 }
-
-
-
-
