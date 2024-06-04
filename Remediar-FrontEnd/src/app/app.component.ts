@@ -5,7 +5,7 @@ import { TabelaEstoqueComponent } from './componentes/tabela-estoque/tabela-esto
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, TabelaEstoqueComponent],
+  imports: [RouterLink, RouterOutlet, TabelaEstoqueComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
