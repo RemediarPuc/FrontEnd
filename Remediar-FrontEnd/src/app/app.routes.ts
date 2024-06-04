@@ -7,6 +7,7 @@ import { DoacaoDeMedicamentoComponent } from './components/doacao-de-medicamento
 import { HistoricoDoadoresComponent } from './components/historico-doadores/historico-doadores.component';
 import { TelaInicialComponent } from './components/tela-inicial/tela-inicial.component';
 import { TelaInicialDoadorComponent } from './components/tela-inicial-doador/tela-inicial-doador.component';
+import { TelaInicialAdmComponent } from './components/tela-inicial-adm/tela-inicial-adm.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
         path: 'HomeDoador',
         component: TelaInicialDoadorComponent
     },
+    {
+        path: 'HomeAdmin',
+        component: TelaInicialAdmComponent
+     },
     {
         path: 'SolicitarMedicamento',
         component: SolicitarMedicamentoComponent
@@ -38,4 +43,4 @@ export const routes: Routes = [
         path:'HistoricoDoadores',
         component: HistoricoDoadoresComponent
     }
-]
+];
