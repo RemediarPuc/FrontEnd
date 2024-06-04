@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header, footer, main{
+    background-color: #B0E1E8;
+    padding: 1cm;
+}
+.borda_letra{
+    text-shadow: -1px -1px 0 #171a21,  
+    1px -1px 0 #171a21,
+    -1px 1px 0 #171a21,
+    1px 1px 0 #171a21
+}
+
+/* Cabeçalho */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo{
+    width: 90px;
+    height: 90px;
+}
+#navegacao{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-right: 2cm;
+    width: 23cm;
+}
+#navegacao a{
+    text-decoration: none;
+    color: #F9F9F9;
+}
+#navegacao a:hover{
+    background-color: #53B0E3;
+}
+#navegacao li{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.6cm;
+    font-weight: 500;
+    padding: 5px;
+}
+
+/* Corpo */ 
