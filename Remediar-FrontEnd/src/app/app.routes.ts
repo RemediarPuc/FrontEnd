@@ -1,3 +1,11 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { CadastroDeDoadorComponent } from './cadastro-de-doador/cadastro-de-doador.component';
+
+export const routes: Routes = [
+    {
+        path: 'cadastroDeDoador',
+        component: CadastroDeDoadorComponent
+
+    }
+];
