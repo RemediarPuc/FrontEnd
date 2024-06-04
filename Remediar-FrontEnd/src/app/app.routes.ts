@@ -6,6 +6,7 @@ import { EmissaoRelatoriosComponent } from './components/emissao-relatorios/emis
 import { DoacaoDeMedicamentoComponent } from './components/doacao-de-medicamento/doacao-de-medicamento.component';
 import { HistoricoDoadoresComponent } from './components/historico-doadores/historico-doadores.component';
 import { TelaInicialComponent } from './components/tela-inicial/tela-inicial.component';
+import { TelaInicialDoadorComponent } from './components/tela-inicial-doador/tela-inicial-doador.component';
 
 export const routes: Routes = [
     {
@@ -17,7 +18,11 @@ export const routes: Routes = [
         component: LoginComponent
     },
     {
-        path: 'solicitar',
+        path: 'HomeDoador',
+        component: TelaInicialDoadorComponent
+    },
+    {
+        path: 'SolicitarMedicamento',
         component: SolicitarMedicamentoComponent
     },
     {
