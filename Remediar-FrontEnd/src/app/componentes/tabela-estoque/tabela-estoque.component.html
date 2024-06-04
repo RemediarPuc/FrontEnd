@@ -1,67 +1,61 @@
 <header>
     <img src="../../assets/logo.png" alt="Logo Remediar" id="logo">
-
+    <nav>
+        <ul id="navegacao">
+            <a href=""><li class="borda_letra">Pedidos</li></a>
+            <a href=""><li class="borda_letra">Solicitações</li></a>
+            <a href=""><li class="borda_letra">Relatórios</li></a>
+            <a href=""><li class="borda_letra">Histórico</li></a>
+        </ul>
+    </nav>
 </header>
 
 <main>
     <div id="campo_pesquisa">
         <input type="text">
-        <button>Pesquisar</button>
+        <input type="button" value="Pesquisar">
     </div>
 
-    <div id="titulo_tabela">
+    <div id="titulo_tabela" class="borda_letra">
         <h2>Estoque</h2>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">Peso</th>
-                <th scope="col">Data de validade</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Produto 1</td>
-                <td>10</td>
-                <td>100</td>
-                <td>03/06/2024</td>
-                <td id="btns">
-                    <button>Detalhes</button>
-                    <button>Dar baixa</button>
-                </td>
-                <td>
-                    <button>Descartar</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Produto 1</td>
-                <td>10</td>
-                <td>100</td>
-                <td>03/06/2024</td>
-                <td id="btns">
-                    <button>Detalhes</button>
-                    <button>Dar baixa</button>
-                </td>
-                <td>
-                    <button>Descartar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="container_tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Data de validade</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="btns">
+                        <button type="button" class="btn btn-info">Editar</button>
+                        <button type="button" class="btn btn-dark">Dar baixa</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger">Descartar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <button>Cadastrar novo</button>
+    <div id="btnCadastrarNovo">
+        <button type="button" class="btn btn-warning" style="float: right;">Cadastrar novo</button>
+    </div>
 
 </main>
 
 <footer>
-    <span id="helpBtn">
-        <i class="fa-solid fa-question"></i>
-    </span>
-
     <div id="logo-social-area">
         <img src="../../assets/logo.png" alt="Logo Remediar" id="logo">
         <div id="redes-sociais">
