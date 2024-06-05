@@ -1,0 +1,177 @@
+body {
+  background-image: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00aaff;
+  padding: 5px 20px;
+}
+
+.header .logo img {
+  height: 60px;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header nav ul li {
+  font-size: 20px; /* Removi 'display: inline;' porque 'display: flex;' já está no pai (.header nav ul) */
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.user_login .icon {
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.dashboard-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  width: calc(33.33% - 20px);
+  position: relative;
+}
+
+.dashboard-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.dashboard-card h3 {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
+  background-color: #00aaff;
+  padding: 20px;
+  text-align: center;
+}
+
+.redes-sociais {
+  margin-bottom: 20px;
+}
+
+.redes-sociais a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.redes-sociais .icon {
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
+}
+
+.logo-remediar img {
+  height: 60px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header, footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+aside {
+  width: 200px;
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
+main {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  height: 300px;
+  overflow-y: auto;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.container {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Estilo da barra de rolagem */
+.scrollbar {
+  height: 17px;
+  background-color: #f2f2f2;
+}
+
+.buttons-div{
+  margin-left: 1000px;
+}
