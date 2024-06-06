@@ -49,7 +49,7 @@ export const routes: Routes = [
     {
         path:'PedidosRealizados',
         component: PedidosComponent
-    }
+    },
     {
         path: 'EstoqueTotal',
         component: RelatorioEstoqueTotalComponent
