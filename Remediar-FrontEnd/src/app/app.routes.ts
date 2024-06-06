@@ -8,6 +8,7 @@ import { HistoricoDoadoresComponent } from './components/historico-doadores/hist
 import { TelaInicialComponent } from './components/tela-inicial/tela-inicial.component';
 import { TelaInicialDoadorComponent } from './components/tela-inicial-doador/tela-inicial-doador.component';
 import { TelaInicialAdmComponent } from './components/tela-inicial-adm/tela-inicial-adm.component';
+import { RelatorioEstoqueTotalComponent } from './components/relatorio-estoque-total/relatorio-estoque-total.component'
 
 export const routes: Routes = [
     {
@@ -42,5 +43,9 @@ export const routes: Routes = [
     {
         path:'HistoricoDoadores',
         component: HistoricoDoadoresComponent
+    },
+    {
+        path: 'EstoqueTotal',
+        component: RelatorioEstoqueTotalComponent
     }
 ];
