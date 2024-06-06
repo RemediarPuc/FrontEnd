@@ -10,7 +10,7 @@ import { TelaInicialDoadorComponent } from './components/tela-inicial-doador/tel
 import { TelaInicialAdmComponent } from './components/tela-inicial-adm/tela-inicial-adm.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { RelatorioEstoqueTotalComponent } from './components/relatorio-estoque-total/relatorio-estoque-total.component';
-import { CadastroDeDoadorComponent } from './cadastro-de-doador/cadastro-de-doador.component';
+import { CadastroDeDoadorComponent } from './components/cadastro-de-doador/cadastro-de-doador.component';
 
 export const routes: Routes = [
     {
@@ -18,7 +18,7 @@ export const routes: Routes = [
         component: TelaInicialComponent
     },
     {
-        path: 'login',
+        path: 'Login',
         component: LoginComponent
     },
     {
@@ -26,7 +26,7 @@ export const routes: Routes = [
         component: TelaInicialDoadorComponent
     },
     {
-        path: 'cadastroDeDoador',
+        path: 'CadastroDeDoador',
         component: CadastroDeDoadorComponent
 
     },
@@ -35,7 +35,7 @@ export const routes: Routes = [
         component: SolicitarMedicamentoComponent
     },
     {
-        path: 'emitirRelatorio',
+        path: 'EmitirRelatorio',
         component: EmissaoRelatoriosComponent
 
     },
