@@ -10,6 +10,7 @@ import { TelaInicialDoadorComponent } from './components/tela-inicial-doador/tel
 import { TelaInicialAdmComponent } from './components/tela-inicial-adm/tela-inicial-adm.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 
+import { RelatorioEstoqueTotalComponent } from './components/relatorio-estoque-total/relatorio-estoque-total.component'
 
 export const routes: Routes = [
     {
@@ -48,5 +49,9 @@ export const routes: Routes = [
     {
         path:'PedidosRealizados',
         component: PedidosComponent
+    }
+    {
+        path: 'EstoqueTotal',
+        component: RelatorioEstoqueTotalComponent
     }
 ];
