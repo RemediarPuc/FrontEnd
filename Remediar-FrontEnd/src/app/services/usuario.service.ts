@@ -12,7 +12,7 @@ export class UsuarioService {
   constructor(private http:HttpClient) { }
 
   getUsuarioLogin(email:String, senha:String):Observable<any>{
-    const url = `${environment.baseUrlApi}/Usuario/login/${email}/${senha}`
+    const url = `${environment.baseUrlApi}/Clientes/login/${email}/${senha}`
     return this.http.get<Usuario>(url, { responseType: 'json' });
   }
 }
