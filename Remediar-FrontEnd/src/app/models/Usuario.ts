@@ -1,3 +1,5 @@
+import { TipoUsuario } from "./TipoUsuario";
+
 export class Usuario {
     id:             number = 0;
     nome:           string = "";
@@ -16,9 +18,10 @@ export class Usuario {
     telefone:       string = "";
     email:          string = "";
     senha:          string = "";
+    tipoUsuario?:           TipoUsuario;
     
-    constructor(){
-       
+    constructor(){ 
     }
+    
  
 }
