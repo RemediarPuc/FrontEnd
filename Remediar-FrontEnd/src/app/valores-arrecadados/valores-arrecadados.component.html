@@ -1,1 +1,49 @@
-<p>valores-arrecadados works!</p>
+<body>
+  <header class="header">
+    <div class="logo">
+        <img src="assets/imagens/remediarLogo.jpg" alt="Remediar Logo">
+    </div>
+    <div class="user_login">
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="valores-arrecadados-container">
+    <button class="voltar">Voltar</button>
+    <h2 style="padding: 20px 0px;">Valores Arrecadados</h2>
+    <div class="charts">
+      <div class="bar-chart">
+        <div class="bar" style="height: 200px; background-color: #002088;" title="Fev/24">Fev/24</div>
+        <div class="bar" style="height: 300px; background-color: #de7c12;" title="Mar/24">Mar/24</div>
+        <div class="bar" style="height: 270px; background-color: #28a745;" title="Abr/24">Abr/24</div>
+        <div class="bar" style="height: 340px; background-color: #17a2b8;" title="Mai/24">Mai/24</div>
+      </div>
+      <div class="pie-chart">
+        <svg viewBox="0 0 32 32" width="100" height="100">
+          <circle r="16" cx="16" cy="16" style="stroke: #007bff; stroke-dasharray: 12 88; stroke-width: 32; fill: none;"></circle>
+          <circle r="16" cx="16" cy="16" style="stroke: #28a745; stroke-dasharray: 48 52; stroke-width: 32; fill: none; stroke-dashoffset: 12;"></circle>
+          <circle r="16" cx="16" cy="16" style="stroke: #17a2b8; stroke-dasharray: 24 76; stroke-width: 32; fill: none; stroke-dashoffset: 60;"></circle>
+        </svg>
+      </div>
+    </div>
+    <div class="year-selector">
+      <label for="year">Ano:</label>
+      <select id="year">
+        <option value="2023">2023</option>
+        <option value="2024" selected>2024</option>
+        <option value="2025">2025</option>
+      </select>
+    </div>
+    <button class="view-by-year">Visualização por ano</button>
+  </div>
+
+
+  <footer id="contatos" class="footer">
+    <div class="logo-remediar">
+        <img src="assets/imagens/remediarLogo.jpg" alt="Remediar Logo">
+    </div>
+  </footer>
+
+</body>
