@@ -6,8 +6,8 @@ import { RelatoriosDeDoadorComponent } from './relatorios-de-doador/relatorios-d
   selector: 'app-relatorios-de-doador',
   standalone: true,
   imports: [RouterLink, RouterOutlet, RelatoriosDeDoadorComponent],
-  templateUrl: './relatorios-de-doador.component.html',
-  styleUrl: './relatorios-de-doador.component.css'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Relatorios de doadores';
