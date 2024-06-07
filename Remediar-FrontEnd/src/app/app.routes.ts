@@ -11,6 +11,7 @@ import { TelaInicialAdmComponent } from './components/tela-inicial-adm/tela-inic
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { RelatorioEstoqueTotalComponent } from './components/relatorio-estoque-total/relatorio-estoque-total.component';
 import { CadastroDeDoadorComponent } from './components/cadastro-de-doador/cadastro-de-doador.component';
+import { SolicitacaoDoacoesComponent } from './components/solicitacao-doacoes/solicitacao-doacoes.component';
 
 export const routes: Routes = [
     {
@@ -58,6 +59,10 @@ export const routes: Routes = [
     {
         path: 'EstoqueTotal',
         component: RelatorioEstoqueTotalComponent
+    },
+    {
+        path: 'SolicitacaoDoacoes',
+        component: SolicitacaoDoacoesComponent
     }
 ];
 
