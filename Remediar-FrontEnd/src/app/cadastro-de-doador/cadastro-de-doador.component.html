@@ -17,93 +17,126 @@
     <div class="container">
         <div class="row">
           <div>
-            <form>
+            <form [formGroup]="usuarioCadastroForm" (ngSubmit) = "submit()" #formDir="ngForm" >
             <div class="row form-row"> 
                 <h2>Dados do doador</h2>
               <div class="col-5">
                 <label for="exampleFormControlInput1" class="form-label">Nome (Completo) do doador</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" formControlName="nome" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['nome'].hasError('required')}">
+                <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['nome'].hasError('required'))" class = "mensagem-error">Informe seu nome completo </p>
               </div>
 
               <div class="col-5">
-                <label for="exampleFormControlTextarea1" class="form-label second-field">E-mail</label>
-                <input class="form-control second-field" id="exampleFormControlTextarea1">
+                <label for="exampleFormControlInput1" class="form-label second-field">Nº de Pessoas na casa</label>
+                <input type="number" placeholder="0" class="form-control second-field" formControlName="numPessoaCasa" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['numPessoaCasa'].hasError('required')}">
+                <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['numPessoaCasa'].hasError('required'))" class = "mensagem-error">Informe o número de pessoas na casa </p>             
               </div>
             </div>
             
             <div class="row form-row"> 
               <div class="col-5">
                 <label for="exampleFormControlInput1" class="form-label">CPF</label>
-                <input type="text" placeholder="" class="form-control">
+                <input type="text" placeholder="" class="form-control" formControlName="cpf" formControlName="numPessoaCasa" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['cpf'].hasError('required')}">
+                <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['cpf'].hasError('required'))" class = "mensagem-error">Informe o seu CPF</p>
               </div>
 
                 <div class="col-5">
                   <label for="exampleFormControlInput1" class="form-label second-field">Telefone</label>
-                  <input type="text" placeholder="(XXX) XXXXXXXX" class="form-control second-field">
+                  <input type="text" placeholder="(XXX) XXXXXXXX" class="form-control second-field" formControlName="telefone" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['telefone'].hasError('required')}">
+                  <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['telefone'].hasError('required'))" class = "mensagem-error">Informe seu telefone </p>                
                 </div>
     
             </div>
      
             
       <div class="row form-row"> 
-        <h2>Informações sobre doador</h2>
+
         <div class="col-5">
-          <label for="exampleFormControlInput1" class="form-label">Genero</label>
-          <input type="text" class="form-control">
-    
+          <label for="exampleFormControlInput1" class="form-label">Gênero</label>
+          <input type="text" class="form-control" formControlName="genero" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['genero'].hasError('required')}">
+          <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['genero'].hasError('required'))" class = "mensagem-error">Informe seu Gênero </p>
         </div>
+
         <div class="col-5">
           <label for="exampleFormControlTextarea1" class="form-label second-field">Faixa etária</label>
-          <input type="text" class="form-control second-field" id="exampleFormControlTextarea1">
-    
+          <input type="text" class="form-control second-field" id="exampleFormControlTextarea1" formControlName="faixaEtaria" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['faixaEtaria'].hasError('required')}">
+          <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['faixaEtaria'].hasError('required'))" class = "mensagem-error">Informe sua Faixa Etária </p>
         </div>
       </div>
     
       <div class="row form-row">
         <div class="col-5">
           <label for="exampleFormControlInput1" class="form-label">Escolaridade</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="escolaridade" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['escolaridade'].hasError('required')}">
+          <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['escolaridade'].hasError('required'))" class = "mensagem-error">Informe sua Escolaridade</p>
         </div>
 
         <div class="col-5">
             <label for="exampleFormControlInput1" class="form-label second-field">Renda familiar</label>
-            <input type="number" class="form-control second-field">
-        </div>
+            <input type="number" class="form-control second-field" formControlName="rendaFamiliar" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['rendaFamiliar'].hasError('required')}">
+            <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['rendaFamiliar'].hasError('required'))" class = "mensagem-error">Informe sua Renda Familiar</p>
+          </div>
     
       </div>
 
       <div class="row form-row">
         <div class="col-5">
-          <label for="exampleFormControlInput1" class="form-label">Nº de Pessoas na casa</label>
-          <input type="number" placeholder="0" class="form-control">
+          <label for="exampleFormControlTextarea1" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="exampleFormControlTextarea1" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['email'].hasError('required')}" formControlName="email">
+          <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['email'].hasError('required') || usuarioCadastroForm.controls['email'].hasError('email'))" class = "mensagem-error">Informe um email válido</p>
         </div>
+
+        <div class="col-5">
+          <label for="exampleFormControlInput1" class="form-label second-field">Senha</label>
+          <input type="password" class="form-control second-field" formControlName="senha" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['senha'].hasError('required')}">
+          <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['senha'].hasError('required'))" class = "mensagem-error">Informe uma Senha </p>
+      </div>
+
       </div>
 
       <div class="row form-row">
         <h2>Endereço</h2>
+
+        <div class="col-5">
+          <label for="exampleFormControlInput1" class="form-label">Estado</label>
+          <input type="text" class="form-control" formControlName="estado" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['estado'].hasError('required')}">
+          <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['estado'].hasError('required'))" class = "mensagem-error">Informe seu Estado </p>
+        </div>
+
+        <div class="col-5">
+            <label for="exampleFormControlInput1" class="form-label second-field">Região</label>
+            <input type="text" class="form-control second-field" formControlName="regiao" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['regiao'].hasError('required')}">
+            <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['regiao'].hasError('required'))" class = "mensagem-error">Informe sua Região </p>
+        </div>
+
         <div class="col-5">
           <label for="exampleFormControlInput1" class="form-label">Cidade</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="cidade" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['cidade'].hasError('required')}">
+          <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['cidade'].hasError('required'))" class = "mensagem-error">Informe sua Cidade </p>
         </div>
 
         <div class="col-5">
             <label for="exampleFormControlInput1" class="form-label second-field">CEP</label>
-            <input type="number" class="form-control second-field">
+            <input type="text" class="form-control second-field" formControlName="cep" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['cep'].hasError('required')}">
+            <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['cep'].hasError('required'))" class = "mensagem-error">Informe seu CEP </p>
         </div>
 
         <div class="col-5">
             <label for="exampleFormControlInput1" class="form-label">Rua</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="rua" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['rua'].hasError('required')}">
+            <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['rua'].hasError('required'))" class = "mensagem-error">Informe sua Rua </p>
           </div>
   
           <div class="col-5">
               <label for="exampleFormControlInput1" class="form-label second-field">Nº Número</label>
-              <input type="number" placeholder="0" class="form-control second-field">
-          </div>
+              <input type="text" placeholder="0" class="form-control second-field" formControlName="numero" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['numero'].hasError('required')}">
+              <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['numero'].hasError('required'))" class = "mensagem-error">Informe o Número </p>
+            </div>
 
           <div class="col-5">
             <label for="exampleFormControlInput1" class="form-label">Bairro</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="bairro" [ngClass]="{'inputError':formDir.submitted && usuarioCadastroForm.controls['bairro'].hasError('required')}">
+            <p *ngIf = "formDir.submitted && (usuarioCadastroForm.controls['bairro'].hasError('required'))" class = "mensagem-error">Informe o Bairro </p>
           </div>
       </div>
 
@@ -113,7 +146,7 @@
       <div class="row">
         <div class="buttons-div">
           <button type="submit" class="btn btn-primary">Salvar</button>
-          <button type="submit" class="btn btn-warning">Voltar</button>
+          <button type="" class="btn btn-warning">Voltar</button>
         </div>
         
       </div>
