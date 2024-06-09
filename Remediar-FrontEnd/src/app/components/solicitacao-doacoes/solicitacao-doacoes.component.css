@@ -1,0 +1,76 @@
+body {
+    background-image: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00aaff;
+    padding: 5px 20px;
+}
+
+.header .logo img {
+    height: 60px;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header nav ul li {
+    display: inline;
+    font-size: 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.user_login .icon {
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+}
+
+.footer {
+    background-color: #00aaff;
+    padding: 20px;
+    text-align: center;
+}
+
+.redes-sociais {
+    margin-bottom: 20px;
+}
+
+.user_login .icon {
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+}
+
+.redes-sociais a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.redes-sociais .icon {
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+}
+
+.logo-remediar img {
+    height: 60px;
+}
+
+.container {
+    margin-top: 10vh;
+    height:100vh;
+}
