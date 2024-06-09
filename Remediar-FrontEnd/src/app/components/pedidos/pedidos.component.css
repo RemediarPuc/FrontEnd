@@ -159,7 +159,7 @@ tr:hover {
   padding: 20px;
   overflow: hidden;
 }
-.pedidosRealizados{
+.pedidosRecebidos {
   background: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
 }
 

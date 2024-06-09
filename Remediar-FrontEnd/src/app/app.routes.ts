@@ -56,7 +56,7 @@ export const routes: Routes = [
         component: HistoricoDoadoresComponent
     },
     {
-        path:'PedidosRealizados',
+        path:'PedidosRecebidos',
         component: PedidosComponent
     },
     {
