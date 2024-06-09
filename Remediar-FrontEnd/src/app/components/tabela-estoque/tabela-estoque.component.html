@@ -1,0 +1,89 @@
+<header>
+    <img src="../../assets/imagens/logo.png" alt="Logo Remediar" id="logo">
+    <nav>
+        <ul id="navegacao">
+            <a href=""><li class="borda_letra">Pedidos</li></a>
+            <a href=""><li class="borda_letra">Solicitações</li></a>
+            <a href=""><li class="borda_letra">Descartados</li></a>
+            <a href=""><li class="borda_letra">Relatórios</li></a>
+            <a href=""><li class="borda_letra">Histórico</li></a>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div id="campo_pesquisa">
+        <input type="text">
+        <input type="button" value="Pesquisar">
+    </div>
+
+    <div id="titulo_tabela" class="borda_letra">
+        <h2>Estoque</h2>
+    </div>
+    <div id="container_tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Data de validade</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="btns">
+                        <button type="button" class="btn btn-info">Editar</button>
+                        <button type="button" class="btn btn-dark">Dar baixa</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Descartar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="btnCadastrarNovo">
+        <button type="button" class="btn btn-warning">Cadastrar novo</button>
+    </div>
+
+</main>
+
+<!-- Modal confirmação -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog"> 
+    <div class="modal-dialog modal-dialog-centered mx-auto" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja prosseguir com essa ação?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Sim</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer>
+    <div id="logo-social-area">
+        <img src="../../assets/imagens/logo.png" alt="Logo Remediar" id="logo">
+        <div id="redes-sociais">
+            <a href="" target="_blank"><i></i></a>
+            <a href="" target="_blank"><i></i></a>
+            <a href="" target="_blank"><i></i></a>
+        </div>
+    </div>
+</footer>
