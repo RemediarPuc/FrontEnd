@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { RelatoriosDeDoadorComponent } from './relatorios-de-doador/relatorios-de-doador.component';
+import { RelatoriosAnualMensalComponent } from './relatorios-anual-mensal/relatorios-anual-mensal.component';
 
 @Component({
-  selector: 'app-relatorios-de-doador',
+  selector: 'app-root',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, RelatoriosDeDoadorComponent],
+  imports: [RouterLink, RouterOutlet, RelatoriosAnualMensalComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Relatorios de doadores';
