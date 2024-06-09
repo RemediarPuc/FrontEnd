@@ -1,6 +1,6 @@
 <div class="solicitar">
 
-    <header class="header">
+    <!-- <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="col-md-12 col-2 col-sm-1 col-xs-12 col-md-1 col-lg-1">
                 <img class="logo" src="../../assets/imagens/logo.png" id="icon" alt="User Icon">
@@ -12,7 +12,8 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header> -->
+    <app-header [title]="'Solicitar Medicamento'"></app-header>
 
     <div class="solicitacao-form">
         <form (ngSubmit)="submit()" [formGroup]="dadosSolicitacaoForm" #formDir="ngForm">

@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
-  selector: 'app-emissao-relatorios',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink],
-  templateUrl: './emissao-relatorios.component.html',
-  styleUrl: './emissao-relatorios.component.css'
+    selector: 'app-emissao-relatorios',
+    standalone: true,
+    templateUrl: './emissao-relatorios.component.html',
+    styleUrl: './emissao-relatorios.component.css',
+    imports: [RouterOutlet, RouterLink, HeaderComponent]
 })
 export class EmissaoRelatoriosComponent {
 

@@ -12,6 +12,8 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { RelatorioEstoqueTotalComponent } from './components/relatorio-estoque-total/relatorio-estoque-total.component';
 import { CadastroDeDoadorComponent } from './components/cadastro-de-doador/cadastro-de-doador.component';
 import { SolicitacaoDoacoesComponent } from './components/solicitacao-doacoes/solicitacao-doacoes.component';
+import { RemediosDescartadosComponent } from './components/remedios-descartados/remedios-descartados.component';
+import { TabelaEstoqueComponent } from './components/tabela-estoque/tabela-estoque.component';
 
 export const routes: Routes = [
     {
@@ -63,6 +65,16 @@ export const routes: Routes = [
     {
         path: 'SolicitacaoDoacoes',
         component: SolicitacaoDoacoesComponent
+    },
+    {
+        path: 'RelatorioRemedioDescartados',
+        component: RemediosDescartadosComponent
+    },
+    {
+        path: 'ControleEstoque',
+        component: TabelaEstoqueComponent
     }
+    
+    
 ];
 

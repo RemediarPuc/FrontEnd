@@ -36,6 +36,10 @@ body {
     height: 40px;
     fill: #ffffff;
   }
+
+  .estoqueTotal{
+    background: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+  }
   
   .dashboard {
     display: flex;
