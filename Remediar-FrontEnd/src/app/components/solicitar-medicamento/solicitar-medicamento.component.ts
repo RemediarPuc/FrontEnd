@@ -19,9 +19,9 @@ export class SolicitarMedicamentoComponent {
   constructor(private formBuilder: FormBuilder, private router: Router, private service:PedidosMedicamentosService){}
 
   ngOnInit(): void{
-    const usuarioLogado = this.getObjetoLocalStorage();
+    const usuarioLogado = this.getObjetoLocalStorage() || { nome: '', telefone: '' };
     this.dadosSolicitacaoForm = this.formBuilder.group({
-      nomeMedicamento: ['', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ú ]+$')]],
+      nomeMedicamento: ['', [Validators.required]],
       dosagem         : ['', Validators.required],
       unidade         : ['Ampolas', Validators.required],
       quantidade      : ['', Validators.required],
@@ -34,6 +34,7 @@ export class SolicitarMedicamentoComponent {
       valorPedido     : [0.0],
       dataRetirada    : [null]
     })
+    
   }
 
   goBack(): void {
@@ -67,10 +68,13 @@ export class SolicitarMedicamentoComponent {
   }
 
   getObjetoLocalStorage(): any | null {
-    const objetoSerializado = localStorage.getItem("Usuario");
-    if (objetoSerializado) {
-      return JSON.parse(objetoSerializado);
+    if (typeof localStorage !== 'undefined') {
+      const objetoSerializado = localStorage.getItem("Usuario");
+      if (objetoSerializado) {
+        return JSON.parse(objetoSerializado);
+      }
     }
-    return null;
+    return null
+    
   }
 }

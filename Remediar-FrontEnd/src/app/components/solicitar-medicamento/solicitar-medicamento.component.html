@@ -1,5 +1,4 @@
 <div class="solicitar">
-
     <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="col-md-12 col-2 col-sm-1 col-xs-12 col-md-1 col-lg-1">
@@ -13,7 +12,6 @@
             </div>
         </nav>
     </header>
-
     <div class="solicitacao-form">
         <form (ngSubmit)="submit()" [formGroup]="dadosSolicitacaoForm" #formDir="ngForm">
             <div class="row mb-6 ">
@@ -35,7 +33,6 @@
                     <p *ngIf="formDir.submitted && dadosSolicitacaoForm.controls['dosagem'].hasError('required')"
                         class="mensagem-error col-md-4">*Informe a dosagem do medicamento</p>
                 </div>
-
             </div>
             <div class="row mb-2">
                 <label for="descricao" class="col-md-12 labelInput">Unidade:</label>
@@ -62,7 +59,6 @@
                         class="mensagem-error col-md-4">*Informe a quantidade indicada na receita</p>
                 </div>
             </div>
-
             <div class="row mb-2">
                 <label for="descricao" class="col-md-12 labelInput">Medicamento de uso contínuo?</label>
                 <div class="col-md-4 radio-label">
@@ -105,14 +101,14 @@
                     <p>Suas informações:</p>
                 </div>
                 <div class="row camposInfoUsuario">
-                    <label for="nomeUsuario" class="col-md-1 labelInput">Nome:</label>
+                    <label for="nomeUsuario" class="col-md-2 labelInput">Nome:</label>
                     <div class="col-md-3 col-9">
                         <input type="text" id="nomeUsuario" name="nomeUsuario" formControlName="nomeUsuario" readonly>
                     </div>
                 </div>
                 <div class="row camposInfoUsuario mb-2">
-                    <label for="telefone" class="col-md-1 labelInput">Telefone:</label>
-                    <div class="col-md-3 col-8">
+                    <label for="telefone" class="col-md-2 labelInput">Telefone:</label>
+                    <div class="col-md-4 col-8">
                         <input type="tel" id="telefone" name="telefone" formControlName="telefone" readonly>
                     </div>
                 </div>
