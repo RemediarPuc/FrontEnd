@@ -165,3 +165,7 @@ button {
     font-size: 18px;
     color: #F40E0E;
 }
+
+input[readonly] {
+    background-color: #d3d3d3; 
+}
