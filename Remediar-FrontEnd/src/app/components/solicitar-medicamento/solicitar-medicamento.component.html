@@ -22,19 +22,18 @@
                     <p *ngIf="formDir.submitted && dadosSolicitacaoForm.controls['dosagem'].hasError('required')"
                         class="mensagem-error col-md-4">*Informe a dosagem do medicamento</p>
                 </div>
-
             </div>
             <div class="row mb-2">
                 <label for="descricao" class="col-md-12 labelInput">Unidade:</label>
                 <div class="col-md-2">
-                    <select id="inputComprimido" class="col-md-2">
-                        <option selected>Ampolas</option>
-                        <option>Cápsulas</option>
-                        <option >Comprimidos</option>
-                        <option>Gotas</option>
-                        <option>Injeções</option>
-                        <option>Mililitros (ml)</option>
-                        <option>Pomadas ou cremes</option>
+                    <select id="inputComprimido" class="col-md-2" formControlName="unidade">
+                        <option value="Ampolas" selected>Ampolas</option>
+                        <option value="Cápsulas">Cápsulas</option>
+                        <option value="Comprimidos">Comprimidos</option>
+                        <option value="Gotas">Gotas</option>
+                        <option value="Injeções">Injeções</option>
+                        <option value="Mililitros (ml)">Mililitros (ml)</option>
+                        <option value="Pomadas ou cremes">Pomadas ou cremes</option>
                     </select>
                 </div>
 
@@ -49,7 +48,6 @@
                         class="mensagem-error col-md-4">*Informe a quantidade indicada na receita</p>
                 </div>
             </div>
-
             <div class="row mb-2">
                 <label for="descricao" class="col-md-12 labelInput">Medicamento de uso contínuo?</label>
                 <div class="col-md-4 radio-label">
@@ -66,7 +64,8 @@
                 </div>
                 <div class="row radio-label infosEndereco">
                     <div class="col-md-6 radio-label">
-                        <input type="radio" id="opcao-2" name="endereco" value="2" formControlName="endereco">
+                        <input type="radio" id="opcao-2" name="endereco" value="CENTRO - RUA CARIJOS, 141 - 2º ANDAR, CENTRO BH"
+                            formControlName="endereco">
                         <span>CENTRO - RUA CARIJOS, 141 - 2º ANDAR <br>(DENTRO DO SINDMAR) - CENTRO BH</span>
                     </div>
                     
@@ -76,7 +75,7 @@
                 </div>
                 <div class="row radio-label infosEndereco">
                     <div class="col-md-6 radio-label">
-                        <input type="radio" id="opcao-2" name="endereco" value="1" formControlName="endereco">
+                        <input type="radio" id="opcao-2" name="endereco" value="RUA FERREIRA DE AGUIAR, 289, NAZARE" formControlName="endereco">
                         <span>RUA FERREIRA DE AGUIAR, 289, NAZARE</span>
                     </div>
                     
@@ -88,26 +87,18 @@
             </div>
             <div class="col-md-6 mb-2 dadosUsuario">
                 <div class="tituloDadosUsuario">
-                    <p>Confirme suas informações:</p>
+                    <p>Suas informações:</p>
                 </div>
                 <div class="row camposInfoUsuario">
-                    <label for="nomeUsuario" class="col-md-1 labelInput">Nome:</label>
+                    <label for="nomeUsuario" class="col-md-2 labelInput">Nome:</label>
                     <div class="col-md-3 col-9">
-                        <input type="text" id="nomeUsuario" name="nomeUsuario" formControlName="nomeUsuario">
-                    </div>
-                    <div class="col-md-8">
-                        <p *ngIf="formDir.submitted && dadosSolicitacaoForm.controls['nomeUsuario'].hasError('required')"
-                            class="mensagem-error col-md-4">*Informe o seu nome</p>
+                        <input type="text" id="nomeUsuario" name="nomeUsuario" formControlName="nomeUsuario" readonly>
                     </div>
                 </div>
                 <div class="row camposInfoUsuario mb-2">
-                    <label for="telefone" class="col-md-1 labelInput">Telefone:</label>
-                    <div class="col-md-3 col-8">
-                        <input type="tel" id="telefone" name="telefone" formControlName="telefone" pattern="\d{10,11}">
-                    </div>
-                    <div class="col-md-8">
-                        <p *ngIf="formDir.submitted && dadosSolicitacaoForm.controls['telefone'].hasError('required') || dadosSolicitacaoForm.controls['telefone'].hasError('pattern')"
-                            class="mensagem-error col-md-4">*Informe um telefone válido</p>
+                    <label for="telefone" class="col-md-2 labelInput">Telefone:</label>
+                    <div class="col-md-4 col-8">
+                        <input type="tel" id="telefone" name="telefone" formControlName="telefone" readonly>
                     </div>
                 </div>
             </div>

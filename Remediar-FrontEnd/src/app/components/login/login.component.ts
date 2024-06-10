@@ -38,6 +38,7 @@ export class LoginComponent {
             let objeto ={
               Id: retorno.data.id,
               nome: retorno.data.nome,
+              telefone: retorno.data.telefone,
               tipo: TipoUsuario[retorno.data.tipoUsuario]
             }
             this.adicionaDadosLocalStorage(objeto);
