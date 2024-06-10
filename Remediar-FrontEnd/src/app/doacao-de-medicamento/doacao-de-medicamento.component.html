@@ -18,85 +18,49 @@
     <h2>Informações do Medicamento</h2>
       <div class="row">
         <div>
-          <form>
+          <form [formGroup]="doacaoForm" (ngSubmit) = "submit()" #formDir="ngForm">
           <div class="row form-row"> 
             <div class="col-5">
               <label for="exampleFormControlInput1" class="form-label">Nome do Medicamento</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" formControlName="nomeMedicamento" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['nomeMedicamento'].hasError('required')}">
+              <p *ngIf = "formDir.submitted && (doacaoForm.controls['nomeMedicamento'].hasError('required'))" class = "mensagem-error">Informe o Nome do Medicamento</p>
               
-              <!-- <div *ngIf="">
-                <p>O nome do medicamento deve ser informado</p>
-              </div> -->
-        
             </div>
             <div class="col-5">
               <label for="exampleFormControlTextarea1" class="form-label second-field">Quantidade (Caixas)</label>
-              <input class="form-control second-field" id="exampleFormControlTextarea1">
-  
-              <!-- <div *ngIf="form.controls.email.errors && form.controls.email.touched">
-                <p>O e-mail deve estar no formato correto</p>
-              </div> -->
-        
+              <input class="form-control second-field" id="exampleFormControlTextarea1" formControlName="qtdCaixas" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdCaixas'].hasError('required')}">
+              <p style="margin-left: 68px;" *ngIf = "formDir.submitted && (doacaoForm.controls['qtdCaixas'].hasError('required'))" class = "mensagem-error">Informe a Quantidade de Caixas</p>
+             
             </div>
           </div>
           <div class="row form-row"> 
             <div class="col-5">
               <label for="exampleFormControlInput1" class="form-label">Quantidade de mg</label>
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" formControlName="qtdMg" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdMg'].hasError('required')}">
+              <p *ngIf = "formDir.submitted && (doacaoForm.controls['qtdMg'].hasError('required'))" class = "mensagem-error">Informe a Quantidade de Mg</p>
             </div>
   
-            <!-- <div *ngIf="form.controls.email.errors && form.controls.email.touched">
-                <p>O e-mail deve estar no formato correto</p>
-              </div> -->
+           
   
             <div class="col-5">
               <label for="exampleFormControlInput1" class="form-label second-field">Data de Validade</label>
-              <input type="date" class="form-control second-field" id="exampleFormControlInput1">
+              <input type="date" class="form-control second-field" id="exampleFormControlInput1" formControlName="dtValidade" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['dtValidade'].hasError('required')}">
+              <p style="margin-left: 68px;" *ngIf = "formDir.submitted && (doacaoForm.controls['dtValidade'].hasError('required'))" class = "mensagem-error">Informe a Data Validade</p>
             </div>
           </div>
-  
-      <h2>Informações do Doador</h2>
-   
-    <div class="row form-row"> 
-      <div class="col-5">
-        <label for="exampleFormControlInput1" class="form-label">Nome do Doador</label>
-        <input type="text" class="form-control">
-        
-        <!-- <div *ngIf="">
-          <p>O nome do medicamento deve ser informado</p>
-        </div> -->
-  
-      </div>
-      <div class="col-5">
-        <label for="exampleFormControlTextarea1" class="form-label second-field">Telefone</label>
-        <input type="text" class="form-control second-field" id="exampleFormControlTextarea1">
-  
-        <!-- <div *ngIf="form.controls.email.errors && form.controls.email.touched">
-          <p>O e-mail deve estar no formato correto</p>
-        </div> -->
-  
-      </div>
-    </div>
-  
-    <div class="row form-row">
-      <div class="col-5">
-        <label for="exampleFormControlInput1" class="form-label">Endereço (Rua + Bairro)</label>
-        <input type="text" class="form-control">
-      </div>
-  
-      <!-- <div *ngIf="form.controls.email.errors && form.controls.email.touched">
-          <p>O e-mail deve estar no formato correto</p>
-        </div> -->
-  
-      <div class="col-5">
-        <label for="exampleFormControlInput1" class="form-label second-field">Melhor dia e Horário para Retirada</label>
-        <input type="datetime-local" class="form-control second-field" id="exampleFormControlInput1">
-      </div>
-    </div>
+
+          <div class="row form-row"> 
+            <div class="col-5">
+              <label for="exampleFormControlInput1" class="form-label">Melhor dia e Horário para Retirada</label>
+              <input type="datetime-local" class="form-control" id="exampleFormControlInput1" formControlName="dtRetirada" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['dtRetirada'].hasError('required')}">
+              <p *ngIf = "formDir.submitted && (doacaoForm.controls['dtRetirada'].hasError('required'))" class = "mensagem-error">Informe a Data Retirada</p>            
+            </div>
+          </div>
+
     <div class="row">
       <div class="buttons-div">
         <button type="submit" class="btn btn-primary">Salvar</button>
-        <button type="submit" class="btn btn-warning">Voltar</button>
+        <button type="" class="btn btn-warning">Voltar</button>
       </div>
       
     </div>
