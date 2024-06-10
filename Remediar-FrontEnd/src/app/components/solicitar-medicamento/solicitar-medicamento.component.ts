@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular
 import { Router } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import { PedidosMedicamentosService } from '../../services/pedidos-medicamentos.service';
+import { LocalStorageService } from '../../services/local-storage-service.service';
 
 @Component({
     selector: 'app-solicitar-medicamento',
@@ -17,10 +18,10 @@ export class SolicitarMedicamentoComponent {
   dadosSolicitacaoForm!: FormGroup;
   sucessLogin:boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private service:PedidosMedicamentosService){}
+  constructor(private formBuilder: FormBuilder, private router: Router, private service:PedidosMedicamentosService, private localStorageService: LocalStorageService){}
 
   ngOnInit(): void{
-    const usuarioLogado = this.getObjetoLocalStorage() || { nome: '', telefone: '' };
+    const usuarioLogado = this.localStorageService.getItem('Usuario') || { nome: '', telefone: '' };
     this.dadosSolicitacaoForm = this.formBuilder.group({
       nomeMedicamento: ['', [Validators.required]],
       dosagem         : ['', Validators.required],
@@ -45,7 +46,7 @@ export class SolicitarMedicamentoComponent {
   submit(){
     if(this.dadosSolicitacaoForm.valid){
       const {value} = this.dadosSolicitacaoForm;
-      const usuario = this.getObjetoLocalStorage();
+      const usuario = this.localStorageService.getItem('Usuario');
       value.usuarioId = usuario.Id;
       value.nomeMedicamento = this.processaNome(value.nomeMedicamento);
       this.service.cadastrarNovoPedido(value)
@@ -66,16 +67,5 @@ export class SolicitarMedicamentoComponent {
 
   processaNome(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-  }
-
-  getObjetoLocalStorage(): any | null {
-    if (typeof localStorage !== 'undefined') {
-      const objetoSerializado = localStorage.getItem("Usuario");
-      if (objetoSerializado) {
-        return JSON.parse(objetoSerializado);
-      }
-    }
-    return null
-    
   }
 }

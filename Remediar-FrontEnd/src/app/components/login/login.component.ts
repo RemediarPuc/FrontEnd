@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/route
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from '../../models/Usuario';
 import { TipoUsuario } from '../../models/TipoUsuario';
+import { LocalStorageService } from '../../services/local-storage-service.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
   loginForm!: FormGroup;
   sucessLogin:boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private service:UsuarioService ){}
+  constructor(private formBuilder: FormBuilder, private router: Router, private service:UsuarioService, private localStorageService: LocalStorageService){}
 
   ngOnInit(): void{
     this.loginForm = this.formBuilder.group({
@@ -41,7 +42,7 @@ export class LoginComponent {
               telefone: retorno.data.telefone,
               tipo: TipoUsuario[retorno.data.tipoUsuario]
             }
-            this.adicionaDadosLocalStorage(objeto);
+            this.localStorageService.setItem('Usuario', objeto);
             this.redirecionaUsuario(objeto);
           },
           (error) => {
@@ -51,11 +52,6 @@ export class LoginComponent {
     }else{
       return;
     }
-  }
-
-  adicionaDadosLocalStorage(usuario:any){
-    const usuarioSerializado = JSON.stringify(usuario);
-    localStorage.setItem('Usuario', usuarioSerializado);
   }
 
   redirecionaUsuario(usuario:any){

@@ -38,6 +38,10 @@ export class PedidosComponent {
           this.pedidos = retorno.data;
           this.pedidosFiltrados = retorno.data;
           console.log(this.pedidos);
+        },
+        (error) => {
+          
+          console.log("Erro: ", error);
         }
       );
   }
