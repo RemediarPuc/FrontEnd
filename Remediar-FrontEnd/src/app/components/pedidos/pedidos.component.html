@@ -1,175 +1,78 @@
 <app-header [title]="'Pedidos recebidos'"></app-header>
 <div class="pedidosRecebidos">
-
-<div class=container>
-    <div class="content">
-        <aside>
-            <div class="filter">
-                <div>
-                    <label for="status">Status:</label>
-                </div>
-                <div>
-                    <select id="status">
-                        <option value="pendente">Pendente</option>
-                        <option value="separacao">Em Separação</option>
-                        <option value="entregue">Entregue</option>
-                    </select>
-                </div>
+    <div class="row filtros justify-content-end">
+            <div class="col-2">
+                <label for="status">Status:</label>
+                <select id="status">
+                    <option value="entregue">Todos</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="entregue">Concluído</option>
+                </select>
             </div>
-            <div class="filter">
+            <div class="col-4">
                 <label for="date">Período:</label>
                 <input type="date" id="start_date">
                 <input type="date" id="end_date">
             </div>
-        </aside>
-        <main>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Número do Pedido</th>
-                            <th>Nome do Requerente</th>
-                            <th>Quantidade de Itens</th>
-                            <th>Hora do Pedido</th>
-                            <th>Data do Pedido</th>
-                            <th>Status do Pedido</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>0022</th>
-                            <th>Maria</th>
-                            <th>04 itens</th>
-                            <th>12:00</th>
-                            <th>10/02/2024</th>
-                            <th>Entregue</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>0135</th>
-                            <th>João</th>
-                            <th>08 itens</th>
-                            <th>14:30</th>
-                            <th>11/02/2024</th>
-                            <th>Em separação</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>0456</th>
-                            <th>Ana</th>
-                            <th>03 itens</th>
-                            <th>09:45</th>
-                            <th>12/02/2024</th>
-                            <th>Aguardando</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>0267</th>
-                            <th>Carlos</th>
-                            <th>05 itens</th>
-                            <th>11:20</th>
-                            <th>13/02/2024</th>
-                            <th>Entregue</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>0378</th>
-                            <th>Sandra</th>
-                            <th>06 itens</th>
-                            <th>08:10</th>
-                            <th>14/02/2024</th>
-                            <th>Em separação</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>0842</th>
-                            <th>Luis</th>
-                            <th>02 itens</th>
-                            <th>15:55</th>
-                            <th>15/02/2024</th>
-                            <th>Aguardando</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>0953</th>
-                            <th>Patrícia</th>
-                            <th>07 itens</th>
-                            <th>10:25</th>
-                            <th>16/02/2024</th>
-                            <th>Entregue</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>1024</th>
-                            <th>Fernando</th>
-                            <th>03 itens</th>
-                            <th>13:40</th>
-                            <th>17/02/2024</th>
-                            <th>Em separação</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>1135</th>
-                            <th>Larissa</th>
-                            <th>09 itens</th>
-                            <th>07:15</th>
-                            <th>18/02/2024</th>
-                            <th>Aguardando</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>1267</th>
-                            <th>Paulo</th>
-                            <th>04 itens</th>
-                            <th>09:00</th>
-                            <th>19/02/2024</th>
-                            <th>Entregue</th>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>1378</th>
-                            <th>Raquel</th>
-                            <th>05 itens</th>
-                            <th>14:50</th>
-                            <th>20/02/2024</th>
-                            <th>Em separação</th>
-                        </tr>                        
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <th>1423</th>
-                            <th>Gabriel</th>
-                            <th>06 itens</th>
-                            <th>08:30</th>
-                            <th>21/02/2024</th>
-                            <th>Aguardando</th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <a href="HomeAdmin">
-                <div class="row">
-                    <div class="buttons-div">
-                        <button type="button" class="btn btn-warning">Voltar</button>
-                    </div>
-                </div>
-            </a>
-        </main>
-        <div>
-            
+        <div class="filter">
         </div>
     </div>
-</div>
-<app-footer></app-footer>
-
+    <div class="lancamentos">
+        <table>
+            <thead>
+              <tr>
+                <th class="col-1">Número</th>
+                <th class="col-1">Solicitante</th>
+                <th class="col-3">Medicamento</th>
+                <th class="col-1">Quantidade</th>
+                <th class="col-2">Endereço de Retirada</th>
+                <th class="col-1">Data do Pedido</th>
+                <th class="col-1">Status</th>
+                <th class="col-1"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Solicitante</td>
+                <td>Medicamento</td>
+                <td>Quantidade</td>
+                <td>RUA CARIJOS, 141 - 2º ANDAR
+                    (DENTRO DO SINDMAR) - CENTRO BH</td>
+                <td>Data do Pedido</td>
+                <td>Status</td>
+                <td><button class="btn-concluido">Concluir</button></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Solicitante</td>
+                <td>Medicamento</td>
+                <td>Quantidade</td>
+                <td>CENTRO - RUA CARIJOS, 141 - 2º ANDAR
+                    (DENTRO DO SINDMAR) - CENTRO BH</td>
+                <td>Data do Pedido</td>
+                <td>status</td>
+                <td><button class="btn-concluido">Concluir</button></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Solicitante</td>
+                <td>Medicamento</td>
+                <td>Quantidade</td>
+                <td>RUA FERREIRA DE AGUIAR, 289, NAZARE</td>
+                <td>Data do Pedido</td>
+                <td>Status</td>
+                <td><button class="btn-concluido">Concluir</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+    <div class="row mb-2 divBotao">
+        <a href="HomeDoador">
+            <button class="btn-voltar">Voltar</button>
+        </a>
+    </div>
+<div>
+    
 </div>

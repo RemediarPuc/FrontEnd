@@ -10,5 +10,5 @@ import { FooterComponent } from "../footer/footer.component";
     imports: [HeaderComponent, FooterComponent]
 })
 export class PedidosComponent {
-
+    
 }

@@ -19,7 +19,7 @@ import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.
 export const routes: Routes = [
     {
         path: '',
-        component: TelaInicialComponent
+        component: PedidosComponent
     },
     {
         path: 'Login',
