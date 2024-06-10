@@ -17,4 +17,9 @@ export class PedidosMedicamentosService {
   cadastrarNovoPedido(novoPedido:Pedido):Observable<Pedido>{
     return this.http.post<Pedido>(this.baseUrl, novoPedido);
   }
+
+  //Método para cadastrar novo Usuário
+  getPedidos():Observable<any>{
+    return this.http.get<Pedido>(this.baseUrl, { responseType: 'json' });
+  }
 }

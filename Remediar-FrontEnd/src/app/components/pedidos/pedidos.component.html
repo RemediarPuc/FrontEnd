@@ -1,30 +1,29 @@
 <app-header [title]="'Pedidos recebidos'"></app-header>
 <div class="pedidosRecebidos">
     <div class="row filtros justify-content-end">
-            <div class="col-2">
-                <label for="status">Status:</label>
-                <select id="status">
-                    <option value="entregue">Todos</option>
-                    <option value="pendente">Pendente</option>
-                    <option value="entregue">Concluído</option>
-                </select>
+            <div class="col-3">
+              <label for="status">Status:</label>
+              <select class="select-custom" id="status" [(ngModel)]="statusSelecionado" (change)="filtraPedidos()">
+                <option value="Todos">Todos</option>
+                <option value="Pendente">Pendente</option>
+                <option value="Concluido">Concluido</option>
+              </select>
             </div>
-            <div class="col-4">
+            <!-- <div class="col-4">
                 <label for="date">Período:</label>
-                <input type="date" id="start_date">
-                <input type="date" id="end_date">
-            </div>
+                <input type="date" id="start_date">                <input type="date" id="end_date">
+            </div> -->
         <div class="filter">
         </div>
-    </div>
-    <div class="lancamentos">
-        <table>
+        </div>
+        <div class="lancamentos">
+          <table>
             <thead>
               <tr>
-                <th class="col-1">Número</th>
-                <th class="col-1">Solicitante</th>
+                <th class="col-2 ">Solicitante</th>
                 <th class="col-3">Medicamento</th>
                 <th class="col-1">Quantidade</th>
+                <th class="col-1">Uso Continuo?</th>
                 <th class="col-2">Endereço de Retirada</th>
                 <th class="col-1">Data do Pedido</th>
                 <th class="col-1">Status</th>
@@ -32,38 +31,22 @@
               </tr>
             </thead>
             <tbody>
+              @for(pedido of pedidosFiltrados; track pedido){
               <tr>
-                <td>1</td>
-                <td>Solicitante</td>
-                <td>Medicamento</td>
-                <td>Quantidade</td>
-                <td>RUA CARIJOS, 141 - 2º ANDAR
-                    (DENTRO DO SINDMAR) - CENTRO BH</td>
-                <td>Data do Pedido</td>
-                <td>Status</td>
-                <td><button class="btn-concluido">Concluir</button></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Solicitante</td>
-                <td>Medicamento</td>
-                <td>Quantidade</td>
-                <td>CENTRO - RUA CARIJOS, 141 - 2º ANDAR
-                    (DENTRO DO SINDMAR) - CENTRO BH</td>
-                <td>Data do Pedido</td>
-                <td>status</td>
-                <td><button class="btn-concluido">Concluir</button></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Solicitante</td>
-                <td>Medicamento</td>
-                <td>Quantidade</td>
-                <td>RUA FERREIRA DE AGUIAR, 289, NAZARE</td>
-                <td>Data do Pedido</td>
-                <td>Status</td>
-                <td><button class="btn-concluido">Concluir</button></td>
-              </tr>
+                <td>{{pedido.usuario.nome}} - {{pedido.usuario.telefone}}</td>
+                <td>{{pedido.nomeMedicamento}} - {{pedido.dosagem}},{{pedido.unidade}} </td>
+                <td>{{pedido.quantidade}}</td>
+                <td>{{pedido.usoContinuo}}</td>
+                <td>{{pedido.endereco}}</td>
+                <td>{{pedido.data | date : 'dd/MM/yyyy' }}</td>
+                <td>{{pedido.statusPedido}}</td>
+                  @if(pedido.statusPedido != "Concluido"){
+                    <td><button class="btn-concluido">Concluir</button></td>
+                  }
+                </tr>
+              }
+              
+    
             </tbody>
           </table>
     </div>
