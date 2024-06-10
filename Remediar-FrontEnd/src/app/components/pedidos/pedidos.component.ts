@@ -26,6 +26,7 @@ export class PedidosComponent {
   constructor(private router: Router, private service:PedidosMedicamentosService){}
 
   ngOnInit(): void{
+    this.statusSelecionado = "Todos";
     this.getPedidos();
   }
 
@@ -48,5 +49,16 @@ export class PedidosComponent {
       this.pedidosFiltrados = this.pedidos.filter(pedido => pedido.statusPedido === this.statusSelecionado);
     }
     
+  }
+
+  atualizaStatus(pedido:Pedido){
+    if (pedido.id !== undefined) { 
+      this.service.atualizaPedido(pedido.id, pedido)
+        .subscribe(
+          (retorno) => {
+            this.pedidos = retorno.data;
+            this.filtraPedidos();
+          });
+    }
   }
 }

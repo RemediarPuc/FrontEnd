@@ -22,4 +22,10 @@ export class PedidosMedicamentosService {
   getPedidos():Observable<any>{
     return this.http.get<Pedido>(this.baseUrl, { responseType: 'json' });
   }
+
+  atualizaPedido(id: number, pedido: Pedido):Observable<any>{
+    const url = `${this.baseUrl}/atualizaStatus/${id}`;
+    return this.http.put<Pedido>(url, pedido);
+  }
+
 }

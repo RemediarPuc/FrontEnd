@@ -1,5 +1,6 @@
-<app-header [title]="'Pedidos recebidos'"></app-header>
+
 <div class="pedidosRecebidos">
+  <app-header [title]="'Pedidos recebidos'"></app-header>
     <div class="row filtros justify-content-end">
             <div class="col-3">
               <label for="status">Status:</label>
@@ -41,12 +42,11 @@
                 <td>{{pedido.data | date : 'dd/MM/yyyy' }}</td>
                 <td>{{pedido.statusPedido}}</td>
                   @if(pedido.statusPedido != "Concluido"){
-                    <td><button class="btn-concluido">Concluir</button></td>
+                    <td><button class="btn-concluido" (click) = "atualizaStatus(pedido)">Concluir</button></td>
                   }
                 </tr>
               }
               
-    
             </tbody>
           </table>
     </div>
