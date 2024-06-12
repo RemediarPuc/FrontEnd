@@ -1,0 +1,38 @@
+<div class="emitirRelatorios">
+    <app-header [title]="'Emissão de Relatórios Mensal/Anual'"></app-header>
+    
+    <div class="row corpo">
+        <main>
+            <table>
+                <tr>
+                    <ol>
+                        <h1 class="titleLista">Valor Total/Mensal</h1>
+                        <div class="card card-custom  text-center text-custom align-items-center" style="background-color: #106C9E  ;">
+                            <div class="card-body ">
+                                <h2 class="valor">0,00 R$</h2>
+                            </div>
+                        </div>
+                    </ol>
+                </tr>
+
+                <tr>                    
+                    <ol>                
+                        <h1 class="titleLista">Valor Total/Anual</h1>
+                        <div class="card card-custom  text-center text-custom align-items-center" style="background-color: #106C9E  ;">
+                            <div class="card-body ">
+                                <h2 class="valor">0,00 R$</h2>
+                            </div>
+                        </div>
+                    </ol>
+                </tr>
+            </table>
+        </main>
+
+    </div>
+    <div class="row mb-2 divBotao">
+        <a routerLink (click)="goBack()">
+            <button>Voltar</button>
+        </a>
+        
+    </div>
+</div>

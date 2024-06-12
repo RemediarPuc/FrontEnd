@@ -16,6 +16,7 @@ import { RemediosDescartadosComponent } from './components/remedios-descartados/
 import { TabelaEstoqueComponent } from './components/tabela-estoque/tabela-estoque.component';
 import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.component';
 import { ValoresArrecadadosComponent } from './components/valores-arrecadados/valores-arrecadados.component';
+import { RelatoriosAnualMensalComponent } from './components/relatorios-anual-mensal/relatorios-anual-mensal.component';
 
 export const routes: Routes = [
     {
@@ -83,6 +84,11 @@ export const routes: Routes = [
     {
         path: 'CadastroMedicamentos',
         component: FormCadastroComponent
-    }  
+    },
+    {
+        path: 'RelatoriosAnualMensal',
+        component: RelatoriosAnualMensalComponent
+    }
+    
 ];
 
