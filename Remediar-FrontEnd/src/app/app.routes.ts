@@ -15,6 +15,7 @@ import { SolicitacaoDoacoesComponent } from './components/solicitacao-doacoes/so
 import { RemediosDescartadosComponent } from './components/remedios-descartados/remedios-descartados.component';
 import { TabelaEstoqueComponent } from './components/tabela-estoque/tabela-estoque.component';
 import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.component';
+import { ValoresArrecadadosComponent } from './components/valores-arrecadados/valores-arrecadados.component';
 
 export const routes: Routes = [
     {
@@ -72,13 +73,16 @@ export const routes: Routes = [
         component: RemediosDescartadosComponent
     },
     {
+        path: 'RelatorioValoresArrecadados',
+        component: ValoresArrecadadosComponent
+    },
+    {
         path: 'ControleEstoque',
         component: TabelaEstoqueComponent
     },
     {
         path: 'CadastroMedicamentos',
         component: FormCadastroComponent
-    }
-     
+    }  
 ];
 

@@ -1,0 +1,89 @@
+body {
+  background-image: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh !important;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00aaff;
+  padding: 5px 20px;
+}
+
+.header .logo img {
+  height: 60px;
+}
+.user_login .icon{
+  width: 40px;
+  height: 40px;
+  fill: #ffffff;
+}
+.valores-arrecadados-container {
+  text-align: center;
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.voltar {
+  background: none;
+  border: none;
+  color: #00aaff;
+  font-weight: 800;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.bar-chart .bar {
+  width: 90px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.pie-chart {
+  height: 300px;
+}
+
+.year-selector {
+  margin: 20px 0;
+}
+
+.view-by-year {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #00aaff;
+  padding: 20px;
+  text-align: center;
+}
+.logo-remediar img {
+  height: 60px;
+}
+
+
