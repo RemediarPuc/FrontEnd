@@ -20,7 +20,7 @@ import { ValoresArrecadadosComponent } from './components/valores-arrecadados/va
 export const routes: Routes = [
     {
         path: '',
-        component: PedidosComponent
+        component: TelaInicialComponent
     },
     {
         path: 'Login',
