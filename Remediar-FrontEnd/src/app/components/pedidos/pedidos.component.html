@@ -33,20 +33,19 @@
             </thead>
             <tbody>
               @for(pedido of pedidosFiltrados; track pedido){
-              <tr>
-                <td>{{pedido.usuario.nome}} - {{pedido.usuario.telefone}}</td>
-                <td>{{pedido.nomeMedicamento}} - {{pedido.dosagem}},{{pedido.unidade}} </td>
-                <td>{{pedido.quantidade}}</td>
-                <td>{{pedido.usoContinuo}}</td>
-                <td>{{pedido.endereco}}</td>
-                <td>{{pedido.data | date : 'dd/MM/yyyy' }}</td>
-                <td>{{pedido.statusPedido}}</td>
+                <tr>
+                  <td>{{pedido.usuario.nome}} - {{pedido.usuario.telefone}}</td>
+                  <td>{{pedido.nomeMedicamento}} - {{pedido.dosagem}},{{pedido.unidade}} </td>
+                  <td>{{pedido.quantidade}}</td>
+                  <td>{{pedido.usoContinuo}}</td>
+                  <td>{{pedido.endereco}}</td>
+                  <td>{{pedido.data | date : 'dd/MM/yyyy' }}</td>
+                  <td>{{pedido.statusPedido}}</td>
                   @if(pedido.statusPedido != "Concluido"){
-                    <td><button class="btn-concluido" (click) = "atualizaStatus(pedido)">Concluir</button></td>
+                    <td><button class="btn-concluido" (click)="atualizaStatus(pedido)">Concluir</button></td>
                   }
                 </tr>
               }
-              
             </tbody>
           </table>
     </div>
