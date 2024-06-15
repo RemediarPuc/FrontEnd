@@ -21,6 +21,24 @@
     </div>
 </div>
 
+<div class="row filtros justify-content-end">
+    <div class="col-3">
+      <label for="status">Status:</label>
+      <select class="select-custom" id="status" [(ngModel)]="filtroStatus" (change)="filtrarDoacoes()">
+        <option value="Todos">Todos</option>
+        <option value="Pendente">Pendente</option>
+        <option value="Aprovado">Aprovado</option>
+        <option value="Concluido">Concluído</option>
+        <option value="Reprovado">Reprovado</option>
+      </select>
+    </div>
+    <!-- <div class="col-4">
+        <label for="date">Período:</label>
+        <input type="date" id="start_date">                <input type="date" id="end_date">
+    </div> -->
+<div class="filter">
+</div>
+</div>
 
 <div class="container">
     <div class="row">
@@ -29,84 +47,38 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Remédio</th>
-                    <th scope="col">Quantidade</th>
+                    <th scope="col">Quantidade Caixas</th>
                     <th scope="col">Doador</th>
-                    <th scope="col">Endereço</th>
+                    <th scope="col">Endereço Retirada</th>
                     <th scope="col">Data</th>
-                    <th scope="col">Opções</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Atualizar Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Dipirona 1g</td>
-                    <td>15 Comprimidos</td>
-                    <td>Caio</td>
-                    <td>Alameda dos Pinheiros, 202 - Bairro Vila Nova</td>
-                    <td>15/04/2024</td>
-                    <td>
-                        <div class="buttons-div">
-                            <button id="2" type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Opções</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Azatioprina 50mg</td>
-                    <td>50 Comprimidos</td>
-                    <td>Igor</td>
-                    <td>Travessa das Acácias, 101 - Bairro Bela Vista</td>
-                    <td>16/04/2024</td>
-                    <td>
-                        <div class="buttons-div">
-                            <button id="2" type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Opções</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Mesalazina 500mg</td>
-                    <td>50 Comprimidos</td>
-                    <td>Beatriz</td>
-                    <td>Praça da Liberdade, 789 - Bairro Santo Antônio</td>
-                    <td>17/04/2024</td>
-                    <td>
-                        <div class="buttons-div">
-                            <button id="3" type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Opções</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Prednisona 20mg</td>
-                    <td>30 Comprimidos</td>
-                    <td>Bernardo</td>
-                    <td>Avenida Brasil, 456 - Bairro Jardim América</td>
-                    <td>18/04/2024</td>
-                    <td>
-                        <div class="buttons-div">
-                            <button id="4" type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Opções</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Racecadotrila 100mg</td>
-                    <td>9 Cápsulas</td>
-                    <td>Alice</td>
-                    <td>Rua Silva, 123 - Bairro Centro</td>
-                    <td>19/04/2024</td>
-                    <td>
-                        <div class="buttons-div">
-                            <button id="5" type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Opções</button>
-                        </div>
-                    </td>
-                </tr>
+                @for (doacao of doacoesFiltradas; track $index) 
+                {
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{doacao.nomeMedicamento}}</td>
+                        <td>{{doacao.qtdCaixas}}</td>
+                        <td>{{doacao.usuario.nome}}</td>
+                        <td>{{doacao.usuario.rua}}, {{doacao.usuario.numero}} - {{doacao.usuario.bairro}}</td>
+                        <td>{{doacao.dtRetirada | date : 'dd/MM/yyyy'}}</td>
+                        <td>{{doacao.statusDoacao}}</td>
+                        <td>
+                            <div class="buttons-div">
+                                <select (change)="atualizaStatus($event,doacao.id)" class="form-select form-select-sm mb-2" aria-label=".form-select-lg example" [id]="doacao.id">
+                                    <option selected >Escolha uma opção</option>
+                                    <option value="1">Aprovado</option>
+                                    <option value="2">Concluído</option>
+                                    <option value="3">Reprovado</option>
+                                  </select>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                
             </tbody>
         </table>
     </div>
