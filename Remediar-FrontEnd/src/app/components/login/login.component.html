@@ -4,12 +4,12 @@
 
         <form (ngSubmit) = "submit()" [formGroup]="loginForm" #formDir="ngForm" >
             <input type="text" id="login" [ngClass]="{'inputError':formDir.submitted && loginForm.controls['email'].hasError('required')}" name="login" placeholder="Email" formControlName = "email">
-            <p *ngIf = "formDir.submitted && (loginForm.controls['email'].hasError('required') || loginForm.controls['email'].hasError('email'))" class = "validation-error">Informe um email válido</p>
+            <p *ngIf = "formDir.submitted && (loginForm.controls['email'].hasError('required') || loginForm.controls['email'].hasError('email'))" class = "mensagem-error">Informe um email válido</p>
 
             <input type="password" id="password" [ngClass]="{'inputError':formDir.submitted && loginForm.controls['senha'].hasError('required')}" name="login" placeholder="Senha" formControlName = "senha">
-            <p *ngIf = "formDir.submitted && loginForm.controls['senha'].hasError('required')" class = "validation-error">Informe a senha</p>
+            <p *ngIf = "formDir.submitted && loginForm.controls['senha'].hasError('required')" class = "mensagem-error">Informe a senha</p>
             
-            <p *ngIf ="!sucessLogin"  class = "validation-error">Login ou senha incorreta</p>
+            <p *ngIf ="!sucessLogin"  class = "mensagem-error">Login ou senha incorreta</p>
 
             <button type="submit" class="btnLogin" value="Log In" >Login</button>
         </form>

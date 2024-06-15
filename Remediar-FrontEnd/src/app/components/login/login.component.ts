@@ -22,10 +22,17 @@ export class LoginComponent {
   constructor(private formBuilder: FormBuilder, private router: Router, private service:UsuarioService, private localStorageService: LocalStorageService){}
 
   ngOnInit(): void{
-    this.loginForm = this.formBuilder.group({
-      senha: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
-    })
+
+    const usuario = this.localStorageService.getItem('Usuario');
+    if(!usuario){
+      this.loginForm = this.formBuilder.group({
+        senha: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]]
+      })
+    }else{
+      this.redirecionaUsuario(usuario);
+    }
+    
   }
 
   submit(){

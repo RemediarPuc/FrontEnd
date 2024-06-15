@@ -62,6 +62,13 @@ input{
     border-radius: 10px;
 }
 
+.mensagem-error {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #F40E0E;
+}
+
 .inputError{
     border: 2px solid rgb(240, 14, 14, 0.9);
 }
