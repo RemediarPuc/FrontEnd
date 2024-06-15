@@ -39,6 +39,24 @@
     </div>
 </div>
 
+<div class="row filtros justify-content-end">
+    <div class="col-3">
+      <label for="status">Status:</label>
+      <select class="select-custom" id="status" [(ngModel)]="filtroStatus" (change)="filtrarDoacoes()">
+        <option value="Todos">Todos</option>
+        <option value="Pendente">Pendente</option>
+        <option value="Aprovado">Aprovado</option>
+        <option value="Concluido">Concluído</option>
+        <option value="Reprovado">Reprovado</option>
+      </select>
+    </div>
+    <!-- <div class="col-4">
+        <label for="date">Período:</label>
+        <input type="date" id="start_date">                <input type="date" id="end_date">
+    </div> -->
+<div class="filter">
+</div>
+</div>
 
 <div class="container">
     <div class="row">
@@ -56,7 +74,7 @@
                 </tr>
             </thead>
             <tbody>
-                @for (doacao of doacoes; track $index) 
+                @for (doacao of doacoesFiltradas; track $index) 
                 {
                     <tr>
                         <th scope="row">1</th>
@@ -68,11 +86,11 @@
                         <td>{{doacao.statusDoacao}}</td>
                         <td>
                             <div class="buttons-div">
-                                <select class="form-select form-select-sm mb-2" aria-label=".form-select-lg example">
-                                    <option selected>Escolha uma opção</option>
-                                    <option value="2">Aprovado</option>
-                                    <option value="3">Concluído</option>
-                                    <option value="4">Reprovado</option>
+                                <select (change)="atualizaStatus($event,doacao.id)" class="form-select form-select-sm mb-2" aria-label=".form-select-lg example" [id]="doacao.id">
+                                    <option selected >Escolha uma opção</option>
+                                    <option value="1">Aprovado</option>
+                                    <option value="2">Concluído</option>
+                                    <option value="3">Reprovado</option>
                                   </select>
                             </div>
                         </td>
