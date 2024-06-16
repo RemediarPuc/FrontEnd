@@ -1,8 +1,8 @@
-import { TipoUsuario } from "./TipoUsuario";
+
 
 export class Usuario {
-    id:             number = 0;
     nome:           string = "";
+    id:             number = 0;
     cpf:            string = "";
     genero:         string = "";
     numPessoaCasa:  number = 0;
@@ -18,7 +18,7 @@ export class Usuario {
     telefone:       string = "";
     email:          string = "";
     senha:          string = "";
-    tipoUsuario?:           TipoUsuario;
+    tipoUsuario?:   number = 2;
     
     constructor(){ 
     }

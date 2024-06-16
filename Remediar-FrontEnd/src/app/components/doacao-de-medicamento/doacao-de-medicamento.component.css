@@ -40,13 +40,16 @@ h2{
 button{
     margin-right: 10px;
 }
+.inputError {
+    border: 2px solid rgb(240, 14, 14, 0.9);
+    color: #F40E0E;
+}
 .mensagem-error {
     margin-left: 20px;
     margin-top: 10px;
     font-size: 18px;
     color: #F40E0E;
 }
-.inputError {
-    border: 2px solid rgb(240, 14, 14, 0.9);
+span{
     color: #F40E0E;
 }
