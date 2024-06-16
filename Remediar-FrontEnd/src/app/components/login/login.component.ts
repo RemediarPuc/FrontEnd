@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
-import { UsuarioService } from '../../services/usuario.service';
-import { Usuario } from '../../models/Usuario';
 import { TipoUsuario } from '../../models/TipoUsuario';
 import { LocalStorageService } from '../../services/local-storage-service.service';
+import { UsuarioService } from '../../services/Usuario.service';
+
 
 @Component({
   selector: 'app-login',

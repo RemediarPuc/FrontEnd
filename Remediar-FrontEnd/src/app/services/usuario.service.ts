@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../environment/environment.module';
+import {HttpClient} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import { Usuario } from '../models/Usuario';
 import { Observable } from 'rxjs';
 
@@ -9,10 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  constructor(private http:HttpClient) { }
+baseUrl = `${environment.baseUrlApi}/Usuario`;
+
+constructor( private htppClient: HttpClient) { }
+   
+  cadastro(usuario : Usuario){
+    return this.htppClient.post(this.baseUrl,usuario)
+  }
 
   getUsuarioLogin(email:String, senha:String):Observable<any>{
-    const url = `${environment.baseUrlApi}/Usuario/login/${email}/${senha}`
-    return this.http.get<Usuario>(url, { responseType: 'json' });
+    const url = `${environment.baseUrlApi}/login/${email}/${senha}`
+    return this.htppClient.get<Usuario>(url, { responseType: 'json' });
   }
 }
