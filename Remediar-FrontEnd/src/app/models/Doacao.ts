@@ -8,7 +8,7 @@ export class Doacao {
     dtValidade: Date = new Date();
     dtRetirada : Date = new Date();
     valorDoacao : number = 0;
-    statusDoacao: string = '';
+    statusDoacao: number = 0;
     usuarioId: number = 0;
     usuario: Usuario = new Usuario();
      

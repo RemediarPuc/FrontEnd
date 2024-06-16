@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../environment/environment.module';
+import { environment } from '../../environments/environment.development';
 import { Doacao } from '../models/Doacao';
 import { Observable } from 'rxjs';
 
@@ -13,10 +13,14 @@ export class DoacaoMedicamentoService {
 
 constructor(private httpClient: HttpClient) { }
 
+  cadastroDoacao(doacao : Doacao){
+    return this.httpClient.post(this.baseUrl,doacao);
+  }
   getAllDoacoes(): Observable<any>{
-     return this.httpClient.get<Doacao[]>(this.baseUrl)
-  }
-  putDoacoes(id: number, status : number){
-    return this.httpClient.put<Doacao[]>(`${this.baseUrl}/alteraStatus/${id}`,status);
-  }
+    return this.httpClient.get<Doacao[]>(this.baseUrl)
+ }
+ putDoacoes(id: number, status : number){
+   return this.httpClient.put<Doacao[]>(`${this.baseUrl}/alteraStatus/${id}`,status);
+ }
 }
+
