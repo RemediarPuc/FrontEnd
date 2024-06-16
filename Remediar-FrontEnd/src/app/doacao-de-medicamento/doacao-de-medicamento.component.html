@@ -28,7 +28,7 @@
             </div>
             <div class="col-5">
               <label for="exampleFormControlTextarea1" class="form-label second-field">Quantidade (Caixas)</label>
-              <input class="form-control second-field" id="exampleFormControlTextarea1" formControlName="qtdCaixas" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdCaixas'].hasError('required')}">
+              <input type="number" class="form-control second-field" id="exampleFormControlTextarea1" formControlName="qtdCaixas" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdCaixas'].hasError('required')}">
               <p style="margin-left: 68px;" *ngIf = "formDir.submitted && (doacaoForm.controls['qtdCaixas'].hasError('required'))" class = "mensagem-error">Informe a Quantidade de Caixas</p>
              
             </div>

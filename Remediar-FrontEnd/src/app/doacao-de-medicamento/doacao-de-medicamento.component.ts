@@ -30,14 +30,17 @@ export class DoacaoDeMedicamentoComponent implements OnInit {
 
   submit(){
      
-     const {value} = this.doacaoForm;
-     this.doacao = value;
-     this.doacao.valorDoacao = 0;
-     this.doacao.statusDoacao = 0; 
-     this.doacao.usuarioId = 1;
-     console.log(this.doacao);
-
-    this.doacaoService.cadastroDoacao(this.doacao).subscribe(()=> this.ngOnInit());
+    if(this.doacaoForm.valid){
+      
+      const {value} = this.doacaoForm;
+      this.doacao = value;
+      this.doacao.valorDoacao = 0;
+      this.doacao.statusDoacao = 0; 
+      this.doacao.usuarioId = 1;
+      console.log(this.doacao);
+ 
+     this.doacaoService.cadastroDoacao(this.doacao).subscribe(()=> this.ngOnInit());
+    }
   }
 
 }
