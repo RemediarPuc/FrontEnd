@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe, Location} from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,7 +18,7 @@ export class SolicitarMedicamentoComponent {
   dadosSolicitacaoForm!: FormGroup;
   sucessLogin:boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private service:PedidosMedicamentosService, private localStorageService: LocalStorageService){}
+  constructor(private formBuilder: FormBuilder, private router: Router, private location: Location, private service:PedidosMedicamentosService, private localStorageService: LocalStorageService){}
 
   ngOnInit(): void{
     const usuarioLogado = this.localStorageService.getItem('Usuario') || { nome: '', telefone: '' };
@@ -40,7 +40,7 @@ export class SolicitarMedicamentoComponent {
   }
 
   goBack(): void {
-    this.router.navigate(['/']); // Navega para a rota anterior
+    this.location.back();
   }
 
   submit(){
