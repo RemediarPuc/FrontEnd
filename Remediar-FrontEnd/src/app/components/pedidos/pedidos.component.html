@@ -21,26 +21,28 @@
           <table>
             <thead>
               <tr>
+                <th class="col-1 ">#</th>
                 <th class="col-2 ">Solicitante</th>
-                <th class="col-3">Medicamento</th>
+                <th class="col-2">Medicamento</th>
                 <th class="col-1">Quantidade</th>
                 <th class="col-1">Uso Continuo?</th>
-                <th class="col-2">Endereço de Retirada</th>
+                <th class="col-3">Endereço de Retirada</th>
                 <th class="col-1">Data do Pedido</th>
                 <th class="col-1">Status</th>
                 <th class="col-1"></th>
               </tr>
             </thead>
             <tbody>
-              @for(pedido of pedidosFiltrados; track pedido){
+              @for(pedido of pedidosFiltrados; track $index){
                 <tr>
-                  <td>{{pedido.usuario.nome}} - {{pedido.usuario.telefone}}</td>
-                  <td>{{pedido.nomeMedicamento}} - {{pedido.dosagem}},{{pedido.unidade}} </td>
+                  <th>{{$index + 1}}</th>
+                  <td>{{pedido.usuario.nome}} - ({{pedido.usuario.telefone}})</td>
+                  <td>{{pedido.nomeMedicamento}}, {{pedido.dosagem}} {{pedido.unidade}} </td>
                   <td>{{pedido.quantidade}}</td>
                   <td>{{pedido.usoContinuo}}</td>
                   <td>{{pedido.endereco}}</td>
                   <td>{{pedido.data | date : 'dd/MM/yyyy' }}</td>
-                  <td>{{pedido.statusPedido}}</td>
+                  <td [ngClass]="{'pedidoConcluido': pedido.statusPedido == 'Concluido', 'pedidoReprovado': pedido.statusPedido == 'Reprovado','bg-warning': pedido.statusPedido == 'Pendente', 'pedidoAprovado':pedido.statusPedido == 'Aprovado'}">{{pedido.statusPedido}}</td>
                   @if(pedido.statusPedido != "Concluido"){
                     <td><button class="btn-concluido" (click)="atualizaStatus(pedido)">Concluir</button></td>
                   }
@@ -50,7 +52,7 @@
           </table>
     </div>
     
-    <div class="row mb-2 divBotao">
+    <div class="container  mb-2 divBotao">
         <a href="HomeAdmin">
             <button class="btn-voltar">Voltar</button>
         </a>

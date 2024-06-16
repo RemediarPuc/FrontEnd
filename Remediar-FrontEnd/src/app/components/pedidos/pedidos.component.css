@@ -65,7 +65,7 @@ tr:hover {
 .btn-voltar{
   background-color: #106C9E;
   color: white;
-  padding: 5px 25px 5px 25px;
+  padding: 5px 20px 5px 20px;
   text-align: center;
   font-size: 18px;
   border-radius: 10px;
@@ -74,8 +74,9 @@ tr:hover {
 }
 
 .divBotao{
-  text-align: left;
-    margin-top: 50px;
+  text-align: right;
+  margin-top: 50px;
+  margin-right: 50PX;
 }
 
 .select-custom {
@@ -91,6 +92,17 @@ tr:hover {
 .select-custom:focus {
   outline: none;
   border-color: #007bff;
+}
+
+.pedidoConcluido{
+  background-color: rgb(85, 185, 85);
+}
+.pedidoReprovado{
+  background-color: rgb(235, 53, 29);
+}
+
+.pedidoAprovado{
+  background-color: #32adeb;
 }
 
 

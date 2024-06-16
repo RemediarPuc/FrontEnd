@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DoacaoMedicamentoService } from '../services/doacao-medicamento.service';
+import { DoacaoMedicamentoService } from '../../services/doacao-medicamento.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Doacao } from '../models/Doacao';
+import { Doacao } from  '../../models/Doacao';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "../header/header.component";
 
@@ -25,7 +25,8 @@ export class DoacaoDeMedicamentoComponent implements OnInit {
       qtdCaixas: ['',Validators.required],
       qtdMg: ['',Validators.required],
       dtValidade: ['',Validators.required],
-      dtRetirada: ['',Validators.required]
+      dtRetirada: ['',Validators.required],
+      statusDoacao: [0]
     })
   }
 
@@ -36,7 +37,7 @@ export class DoacaoDeMedicamentoComponent implements OnInit {
       const {value} = this.doacaoForm;
       this.doacao = value;
       this.doacao.valorDoacao = 0;
-      this.doacao.statusDoacao = 0; 
+      //this.doacao.statusDoacao = '0'; 
       this.doacao.usuarioId = 1;
       console.log(this.doacao);
  

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
-import { CurrencyPipe, DatePipe } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PedidosMedicamentosService } from '../../services/pedidos-medicamentos.service';
@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     standalone: true,
     templateUrl: './pedidos.component.html',
     styleUrl: './pedidos.component.css',
-    imports: [HeaderComponent, FooterComponent, DatePipe,FormsModule]
+    imports: [HeaderComponent, FooterComponent, DatePipe,FormsModule, CommonModule]
 })
 export class PedidosComponent {
 
