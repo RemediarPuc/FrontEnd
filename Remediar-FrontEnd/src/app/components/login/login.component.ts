@@ -42,7 +42,6 @@ export class LoginComponent {
         .subscribe(
           (retorno) => {
             this.sucessLogin = true;
-            console.log(TipoUsuario[retorno.data.tipoUsuario]);
             let objeto ={
               Id: retorno.data.id,
               nome: retorno.data.nome,

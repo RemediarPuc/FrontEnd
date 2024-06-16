@@ -37,7 +37,7 @@ export class PedidosComponent {
         (retorno) => {
           this.pedidos = retorno.data;
           this.pedidosFiltrados = retorno.data;
-          console.log(this.pedidos);
+          
         },
         (error) => {
           

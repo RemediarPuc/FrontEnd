@@ -4,6 +4,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Doacao } from  '../../models/Doacao';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "../header/header.component";
+import { LocalStorageService } from '../../services/local-storage-service.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-doacao-de-medicamento',
@@ -17,7 +20,7 @@ export class DoacaoDeMedicamentoComponent implements OnInit {
   public doacao = new Doacao();
   doacaoForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,private doacaoService: DoacaoMedicamentoService) { }
+  constructor(private formBuilder: FormBuilder,private doacaoService: DoacaoMedicamentoService, private router: Router,private localStorageService: LocalStorageService, private location: Location) { }
 
   ngOnInit() {
     this.doacaoForm = this.formBuilder.group({
@@ -37,12 +40,17 @@ export class DoacaoDeMedicamentoComponent implements OnInit {
       const {value} = this.doacaoForm;
       this.doacao = value;
       this.doacao.valorDoacao = 0;
-      //this.doacao.statusDoacao = '0'; 
-      this.doacao.usuarioId = 1;
+      const usuario = this.localStorageService.getItem('Usuario');
+      value.usuarioId = usuario.Id;
+      this.doacao.usuarioId = usuario.Id;
       console.log(this.doacao);
  
-     this.doacaoService.cadastroDoacao(this.doacao).subscribe(()=> this.ngOnInit());
+     this.doacaoService.cadastroDoacao(this.doacao).subscribe(()=> this.router.navigate(['/HomeDoador']));
     }
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

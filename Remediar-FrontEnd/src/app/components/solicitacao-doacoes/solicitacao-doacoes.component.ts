@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Doacao } from '../../models/Doacao';
 import { DoacaoMedicamentoService } from '../../services/doacao-medicamento.service';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, Location} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from '../header/header.component';
@@ -20,7 +20,7 @@ export class SolicitacaoDoacoesComponent {
   public doacaoSelecionada !: Doacao | null;
   public filtroStatus : string = 'Todos';
 
-  constructor(private doacaoService : DoacaoMedicamentoService){
+  constructor(private doacaoService : DoacaoMedicamentoService, private location: Location){
 
   }
   
@@ -31,6 +31,7 @@ export class SolicitacaoDoacoesComponent {
           this.doacoes = retorno.data;
           this.doacoesFiltradas = retorno.data;
           this.filtrarDoacoes();
+
         },
         (error) => {
           
@@ -59,6 +60,10 @@ export class SolicitacaoDoacoesComponent {
       }
   
      }
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
 

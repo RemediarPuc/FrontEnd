@@ -13,12 +13,12 @@ baseUrl = `${environment.baseUrlApi}/Usuario`;
 
 constructor( private htppClient: HttpClient) { }
    
-  cadastro(usuario : Usuario){
-    return this.htppClient.post(this.baseUrl,usuario)
+  cadastro(usuario : Usuario):Observable<Usuario>{
+    return this.htppClient.post<Usuario>(this.baseUrl,usuario)
   }
 
   getUsuarioLogin(email:String, senha:String):Observable<any>{
-    const url = `${environment.baseUrlApi}/login/${email}/${senha}`
+    const url = `${this.baseUrl}/login/${email}/${senha}`
     return this.htppClient.get<Usuario>(url, { responseType: 'json' });
   }
 }

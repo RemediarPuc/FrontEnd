@@ -6,6 +6,7 @@ import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { UsuarioService } from '../../services/Usuario.service';
 import { HeaderComponent } from "../header/header.component";
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../../services/local-storage-service.service';
 
 
 
@@ -22,7 +23,7 @@ export class CadastroDeDoadorComponent {
   usuarioCadastroForm!: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder,private usuarioService : UsuarioService, private router: Router){
+  constructor(private formBuilder: FormBuilder,private usuarioService : UsuarioService, private router: Router, private localStorageService: LocalStorageService){
      
   }
   
@@ -54,7 +55,17 @@ export class CadastroDeDoadorComponent {
       const {value} = this.usuarioCadastroForm;
       this.usuario = value;
       this.usuario.tipoUsuario = 2;
-      this.usuarioService.cadastro(this.usuario).subscribe(() => this.ngOnInit());
+      this.usuarioService.cadastro(this.usuario).subscribe(
+        (retorno) => {
+          let objeto ={
+            Id: retorno.id,
+            nome: retorno.nome,
+            telefone: retorno.telefone,
+            tipo: retorno.tipoUsuario
+          }
+          this.localStorageService.setItem('Usuario', objeto);
+          this.router.navigate(['/HomeDoador']);
+        });
     }
     
   }
