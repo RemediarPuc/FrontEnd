@@ -21,4 +21,6 @@ constructor( private htppClient: HttpClient) { }
     const url = `${this.baseUrl}/login/${email}/${senha}`
     return this.htppClient.get<Usuario>(url, { responseType: 'json' });
   }
+
+  
 }
