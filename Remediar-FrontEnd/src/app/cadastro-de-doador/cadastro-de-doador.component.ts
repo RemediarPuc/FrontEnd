@@ -3,11 +3,13 @@ import { Usuario } from '../models/Usuario';
 import { UsuarioService } from '../services/Usuario.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+
 
 @Component({
   selector: 'app-cadastro-de-doador',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,NgxMaskDirective,NgxMaskPipe],
   templateUrl: './cadastro-de-doador.component.html',
   styleUrl: './cadastro-de-doador.component.css'
 })
@@ -31,7 +33,7 @@ export class CadastroDeDoadorComponent {
       faixaEtaria : ['',Validators.required],
       escolaridade: ['',Validators.required],
       rendaFamiliar: ['', Validators.required],
-      email: ['',Validators.required,Validators.email],
+      email: ['',[Validators.required,Validators.email]],
       senha: ['',Validators.required],
       cidade:['',Validators.required],
       cep: ['', Validators.required],
@@ -44,26 +46,14 @@ export class CadastroDeDoadorComponent {
     })
   }
   submit(){
-    
-    console.log('cheguei');
 
-    const {value} = this.usuarioCadastroForm;
-    
-    this.usuario = value;
-    this.usuario.tipoUsuario = 2;
-    console.log(this.usuario);
-    this.usuarioService.cadastro(this.usuario).subscribe(() => this.ngOnInit());
-
-   /* if(this.usuarioCadastroForm.valid){
-      console.log('cheguei');
-
-      const {value} = this.usuarioCadastroForm.value;
-      console.log(value);
+    if(this.usuarioCadastroForm.valid){
+      const {value} = this.usuarioCadastroForm;
       this.usuario = value;
+      this.usuario.tipoUsuario = 2;
       this.usuarioService.cadastro(this.usuario).subscribe(() => this.ngOnInit());
-
     }
-      */
+    
   }
 
    
