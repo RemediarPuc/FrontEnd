@@ -3,10 +3,10 @@ import { Usuario } from '../../models/Usuario';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
-import { UsuarioService } from '../../services/Usuario.service';
 import { HeaderComponent } from "../header/header.component";
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../../services/local-storage-service.service';
+import { UsuarioService } from '../../services/usuario.service';
 
 
 

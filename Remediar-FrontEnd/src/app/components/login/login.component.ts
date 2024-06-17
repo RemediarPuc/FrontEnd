@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TipoUsuario } from '../../models/TipoUsuario';
 import { LocalStorageService } from '../../services/local-storage-service.service';
-import { UsuarioService } from '../../services/Usuario.service';
+import { UsuarioService } from '../../services/usuario.service';
+
 
 
 @Component({
