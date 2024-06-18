@@ -1,0 +1,29 @@
+.footer {
+    background-color: #00aaff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .redes-sociais {
+    margin-bottom: 20px;
+  }
+  .user_login .icon{
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+  }
+  .redes-sociais a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .redes-sociais .icon {
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+  }
+  
+  .logo-remediar img {
+    height: 60px;
+  }
