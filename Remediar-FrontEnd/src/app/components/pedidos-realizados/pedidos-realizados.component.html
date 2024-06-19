@@ -1,0 +1,60 @@
+<div class = "solicitacoes">
+
+  <app-header [title]="'Pedidos Realizados'"></app-header>
+
+
+  <div class="row filtros justify-content-end">
+      <div class="col-3">
+          <label for="status">Status:</label>
+          <select class="select-custom" id="status" [(ngModel)]="filtroStatus" (change)="filtrarDoacoes()">
+              <option value="Todos">Todos</option>
+              <option value="Pendente">Pendente</option>
+              <option value="Aprovado">Aprovado</option>
+              <option value="Concluido">Concluído</option>
+              <option value="Reprovado">Reprovado</option>
+          </select>
+      </div>
+
+
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Remédio</th>
+                      <th scope="col">Quantidade Caixas</th>
+                      <th scope="col">Endereço Retirada</th>
+                      <th scope="col">Data de Retirada</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Atualizar Status</th>
+                  </tr>
+              </thead>
+              <tbody >
+                  @for (doacao of doacoesFiltradas; track $index)
+                  {
+                      <tr [ngClass]="{'pedidoConcluido': doacao.statusDoacao == 'Concluido'}">
+                          <th scope="row">{{1+$index}}</th>
+                          <td>{{doacao.nomeMedicamento}}</td>
+                          <td>{{doacao.qtdCaixas}}</td>
+                          <td> {{doacao.usuario.nome}} - ({{doacao.usuario.telefone}})</td>
+                          <td>{{doacao.usuario.rua}}, {{doacao.usuario.numero}} - {{doacao.usuario.bairro}}</td>
+                          <td>{{doacao.dtRetirada | date : 'dd/MM/yyyy - hh:mm'}}</td>
+                          <td [ngClass]="{'pedidoConcluido': doacao.statusDoacao == 'Concluido', 'pedidoReprovado': doacao.statusDoacao == 'Reprovado','bg-warning': doacao.statusDoacao == 'Pendente', 'pedidoAprovado':doacao.statusDoacao == 'Aprovado'}">{{doacao.statusDoacao}}</td>
+                          <td>
+                          </td>
+                      </tr>
+                  }
+
+              </tbody>
+          </table>
+      </div>
+      <div class="row mb-2 divBotao">
+          <a routerLink (click)="goBack()">
+              <button class="btn-voltar">Voltar</button>
+          </a>
+      </div>
+  </div>
+</div>
