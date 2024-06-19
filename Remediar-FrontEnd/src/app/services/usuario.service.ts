@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs/internal/Observable';
-import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/Usuario';
 
 @Injectable({
@@ -9,16 +8,11 @@ import { Usuario } from '../models/Usuario';
 })
 export class UsuarioService {
 
-  baseUrl = `${environment.baseUrlApi}/Usuario`;
+baseUrl = `${environment.baseUrlApi}/Usuario`;
 
-  constructor( private htppClient: HttpClient) { }
+constructor( private htppClient: HttpClient) { }
    
-  cadastro(usuario : Usuario):Observable<Usuario>{
-    return this.htppClient.post<Usuario>(this.baseUrl,usuario)
-  }
-
-  getUsuarioLogin(email:String, senha:String):Observable<any>{
-    const url = `${this.baseUrl}/login/${email}/${senha}`
-    return this.htppClient.get<Usuario>(url, { responseType: 'json' });
+  cadastro(usuario : Usuario){
+    return this.htppClient.post(this.baseUrl,usuario)
   }
 }

@@ -10,6 +10,7 @@ import { UsuarioService } from '../../services/usuario.service';
 
 
 
+
 @Component({
     selector: 'app-cadastro-de-doador',
     standalone: true,
@@ -21,7 +22,6 @@ export class CadastroDeDoadorComponent {
 
   public usuario = new Usuario();
   usuarioCadastroForm!: FormGroup;
-
 
   constructor(private formBuilder: FormBuilder,private usuarioService : UsuarioService, private router: Router, private localStorageService: LocalStorageService){
      
