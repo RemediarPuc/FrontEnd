@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'app-emissao-relatorios',
@@ -11,9 +12,9 @@ import { HeaderComponent } from "../header/header.component";
 })
 export class EmissaoRelatoriosComponent {
 
-  constructor(private router: Router) {}
+  constructor(private location: Location) {}
 
     goBack(): void {
-      this.router.navigate(['/']); // Navega para a rota anterior
+      this.location.back();
     }
 }
