@@ -48,7 +48,7 @@ export class LoginComponent {
               Id: retorno.data.id,
               nome: retorno.data.nome,
               telefone: retorno.data.telefone,
-              tipo: TipoUsuario[retorno.data.tipoUsuario]
+              tipo: retorno.data.tipoUsuario
             }
             this.localStorageService.setItem('Usuario', objeto);
             this.redirecionaUsuario(objeto);
