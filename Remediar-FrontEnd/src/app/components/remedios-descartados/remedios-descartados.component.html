@@ -1,18 +1,7 @@
-<!-- <header>
-    <img src="../../assets/imagens/logo.png" alt="Logo Remediar" id="logo">
-    <nav>
-        <ul id="navegacao">
-            <a href=""><li class="borda_letra">Pedidos</li></a>
-            <a href=""><li class="borda_letra">Solicitações</li></a>
-            <a href=""><li class="borda_letra">Estoque</li></a>
-            <a href=""><li class="borda_letra">Relatórios</li></a>
-            <a href=""><li class="borda_letra">Histórico</li></a>
-        </ul>
-    </nav>
-</header> -->
+
 <app-header [title]="'Relatório de Remédios Descartados'"></app-header>
 
-<main>
+<div class="medicamentosDescartados">
     <div id="campo_pesquisa">
         <input type="text">
         <input type="button" value="Pesquisar">
@@ -41,15 +30,5 @@
             </tbody>
         </table>
     </div>
-</main>
-
-<footer>
-    <div id="logo-social-area">
-        <img src="../../assets/imagens/logo.png" alt="Logo Remediar" id="logo">
-        <div id="redes-sociais">
-            <a href="" target="_blank"><i></i></a>
-            <a href="" target="_blank"><i></i></a>
-            <a href="" target="_blank"><i></i></a>
-        </div>
-    </div>
-</footer>
+    <app-voltar></app-voltar>
+</div>

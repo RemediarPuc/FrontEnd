@@ -3,13 +3,14 @@ import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 import { RemediosDescartadosService } from '../../services/remedios-descartados.service';
 import { CommonModule } from '@angular/common';
+import { VoltarComponent } from "../voltar/voltar.component";
 
 @Component({
     selector: 'app-remedios-descartados',
     standalone: true,
     templateUrl: './remedios-descartados.component.html',
     styleUrl: './remedios-descartados.component.css',
-    imports: [HeaderComponent, FooterComponent, CommonModule]
+    imports: [HeaderComponent, FooterComponent, CommonModule, VoltarComponent]
 })
 export class RemediosDescartadosComponent implements OnInit {
     medicamentosDescartados: any[] = []; // Array para armazenar os medicamentos descartados
