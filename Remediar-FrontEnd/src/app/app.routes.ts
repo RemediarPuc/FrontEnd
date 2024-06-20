@@ -18,6 +18,7 @@ import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.
 import { ValoresArrecadadosComponent } from './components/valores-arrecadados/valores-arrecadados.component';
 import { RelatoriosAnualMensalComponent } from './components/relatorios-anual-mensal/relatorios-anual-mensal.component';
 import { HistoricoDoacoesComponent } from './components/historico-doacoes/historico-doacoes.component';
+import { PedidosRealizadosComponent } from './components/pedidos-realizados/pedidos-realizados.component';
 
 export const routes: Routes = [
     {
@@ -94,8 +95,11 @@ export const routes: Routes = [
     {
         path: 'HistoricoDoacoes',
         component: HistoricoDoacoesComponent
+    },
+    {
+        path: 'PedidosRealizados',
+        component: PedidosRealizadosComponent
     }
-
     
 ];
 
