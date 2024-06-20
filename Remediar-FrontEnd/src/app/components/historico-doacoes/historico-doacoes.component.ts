@@ -14,7 +14,7 @@ import { HistoricoDoacoesService } from '../../services/historico-doacoes.servic
 })
 export class HistoricoDoacoesComponent implements OnInit {
   public historicoDoacoes: any[] = [];
-  public usuarioId: number;
+  public usuarioId: number = 0;
 
   constructor(
     private historicoDoacoesService: HistoricoDoacoesService,
