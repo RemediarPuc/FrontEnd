@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 import { EstoqueService } from '../../services/estoque.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { Medicamento } from '../../models/Medicamento';
 import { VoltarComponent } from "../voltar/voltar.component";
 
@@ -12,7 +12,7 @@ import { VoltarComponent } from "../voltar/voltar.component";
     standalone: true,
     templateUrl: './tabela-estoque.component.html',
     styleUrls: ['./tabela-estoque.component.css'],
-    imports: [HeaderComponent, FooterComponent, CommonModule, VoltarComponent]
+    imports: [HeaderComponent, FooterComponent, CommonModule, VoltarComponent, DatePipe]
 })
   export class TabelaEstoqueComponent implements OnInit {
   

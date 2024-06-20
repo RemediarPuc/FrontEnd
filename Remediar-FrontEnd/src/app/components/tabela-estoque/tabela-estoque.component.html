@@ -28,7 +28,7 @@
                     <td>{{ medicamento.nomeMedicamento }}</td>
                     <td>{{ medicamento.quantidade }}</td>
                     <td>{{ medicamento.peso }}</td>
-                    <td>{{ medicamento.dtVencimento}}</td>
+                    <td>{{ medicamento.dtVencimento | date : 'dd/MM/yyyy' }}</td>
                     <td id="btns">
                         <button type="button" class="btn btn-info">Editar</button>
                         <button type="button" class="btn btn-dark" (click)="darBaixa(medicamento.id)">Dar baixa</button>
