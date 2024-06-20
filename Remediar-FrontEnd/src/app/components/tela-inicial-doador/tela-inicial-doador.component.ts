@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
-import { HeaderTelaInicialUsersComponent } from "../../header-tela-inicial-users/header-tela-inicial-users.component";
+import { HeaderTelaInicialUsersComponent } from '../header-tela-inicial-users/header-tela-inicial-users.component';
+
 
 @Component({
     selector: 'app-tela-inicial-doador',

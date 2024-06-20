@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
-import { LocalStorageService } from '../services/local-storage-service.service';
+import { LocalStorageService } from '../../services/local-storage-service.service';
+
 
 @Component({
   selector: 'app-header-tela-inicial-users',

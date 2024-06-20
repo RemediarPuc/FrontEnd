@@ -1,15 +1,4 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-
-
-header, footer, main{
-    background-color: #B0E1E8;
-    padding: 1cm;
-}
 .borda_letra{
     text-shadow: -1px -1px 0 #171a21,  
     1px -1px 0 #171a21,
@@ -17,19 +6,9 @@ header, footer, main{
     1px 1px 0 #171a21
 }
 
-/* Cabeçalho */
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#logo{
-    width: 90px;
-    height: 90px;
-}
 
 /* Corpo */
-main{
+.cadastro {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -72,8 +51,8 @@ h3{
     margin-bottom: 10px;
 }
 
-/* Rodapé */
-footer{
-    display: flex;
-    justify-content: end;
+.mensagem-error {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #8d0303;
 }

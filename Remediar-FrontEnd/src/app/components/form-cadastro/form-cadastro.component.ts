@@ -4,19 +4,30 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { NgIf, NgClass } from '@angular/common';
 import { Medicamento } from '../../models/Medicamento';
 import { CadastroMedicamentoService } from '../../services/cadastro-medicamento.service';
+import { VoltarComponent } from "../voltar/voltar.component";
 
 @Component({
     selector: 'app-form-cadastro',
     standalone: true,
     templateUrl: './form-cadastro.component.html',
     styleUrls: ['./form-cadastro.component.css'],
-    imports: [HeaderComponent, ReactiveFormsModule, NgIf, NgClass]
+    imports: [HeaderComponent, ReactiveFormsModule, NgIf, NgClass, VoltarComponent]
 })
 export class FormCadastroComponent {
     registrationForm: FormGroup;
     successRegistration: boolean = true;
+    minDate: string = '';
   
     constructor(private fb: FormBuilder, private cadastroService: CadastroMedicamentoService) {
+      
+
+      //Definindo que a data de validade deve ser maior que a data atual
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = ('0' + (today.getMonth() + 1)).slice(-2); 
+      const day = ('0' + today.getDate()).slice(-2); 
+      this.minDate = `${year}-${month}-${day}`;
+      
       this.registrationForm = this.fb.group({
         nomeMedicamento: ['', Validators.required],
         unidade: ['', Validators.required],
