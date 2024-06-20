@@ -1,4 +1,4 @@
-import { Medicamento } from "./Medicamento";
+import { Medicamento } from '../models/Medicamento';
 
 export class MedicamentoDescartado {
     id: number = 0;
@@ -8,7 +8,6 @@ export class MedicamentoDescartado {
     valorDescartado: number = 0;
     medicamentoId: number = 0;
     medicamento?: Medicamento;
-  
-    constructor() {}
-  }
-  
+
+    constructor() { }
+}
