@@ -3,8 +3,8 @@
     margin: 0;
     padding: 0;
 }
-header, footer, main{
-    background-color: #B0E1E8;
+main{
+    
     padding: 1cm;
 }
 .borda_letra{
@@ -36,7 +36,7 @@ header{
     color: #F9F9F9;
 }
 #navegacao a:hover{
-    background-color: #53B0E3;
+    
 }
 #navegacao li{
     text-decoration: none;
@@ -48,7 +48,7 @@ header{
 
 /* Corpo */
 main{
-    background-image: linear-gradient(to top, #8ECCE1, #F9F9F9);
+    
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -111,4 +111,8 @@ button{
 footer{
     display: flex;
     justify-content: end;
+}
+
+a{
+    text-decoration: none;
 }

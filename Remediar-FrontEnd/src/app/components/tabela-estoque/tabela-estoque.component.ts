@@ -4,15 +4,16 @@ import { FooterComponent } from "../footer/footer.component";
 import { EstoqueService } from '../../services/estoque.service';
 import { CommonModule } from '@angular/common';
 import { Medicamento } from '../../models/Medicamento';
+import { VoltarComponent } from "../voltar/voltar.component";
 
 
 @Component({
     selector: 'app-tabela-estoque',
     standalone: true,
-    imports: [HeaderComponent, FooterComponent, CommonModule],
     templateUrl: './tabela-estoque.component.html',
-    styleUrls: ['./tabela-estoque.component.css']
-  })
+    styleUrls: ['./tabela-estoque.component.css'],
+    imports: [HeaderComponent, FooterComponent, CommonModule, VoltarComponent]
+})
   export class TabelaEstoqueComponent implements OnInit {
   
     medicamentos: any[] = []; // Array para armazenar os medicamentos do estoque
