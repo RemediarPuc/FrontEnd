@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-baseUrl = `${environment.baseUrlApi}/Usuario`;
+  baseUrl = `${environment.baseUrlApi}/Usuario`;
 
-constructor( private htppClient: HttpClient) { }
+  constructor( private htppClient: HttpClient) { }
    
   cadastro(usuario : Usuario):Observable<Usuario>{
     return this.htppClient.post<Usuario>(this.baseUrl,usuario)
