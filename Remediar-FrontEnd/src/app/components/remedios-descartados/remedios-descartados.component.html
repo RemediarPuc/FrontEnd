@@ -25,18 +25,18 @@
         <table>
             <thead>
                 <tr>
+                    <th scope="col">Id</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Categoria</th>
                     <th scope="col">Quantidade descartada</th>
                     <th scope="col">Valor descartado</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let medicamentoDescartados of medicamentosDescartados">
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ medicamentoDescartados.id }}</td>
+                    <td>{{ medicamentoDescartados.medicamento.nomeMedicamento }}</td>
+                    <td>{{ medicamentoDescartados.qtdDescartada }}</td>
+                    <td>{{ medicamentoDescartados.valorDescartado }}</td>
                 </tr>
             </tbody>
         </table>
