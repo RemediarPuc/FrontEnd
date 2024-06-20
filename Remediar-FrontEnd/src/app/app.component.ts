@@ -5,12 +5,13 @@ import { LoginComponent } from './components/login/login.component';
 import {CadastroDeDoadorComponent} from './components/cadastro-de-doador/cadastro-de-doador.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { VoltarComponent } from './components/voltar/voltar.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,FormsModule,ReactiveFormsModule, LoginComponent,HttpClientModule,HeaderComponent],
+  imports: [RouterOutlet,RouterLink,FormsModule,ReactiveFormsModule, LoginComponent,HttpClientModule,HeaderComponent, VoltarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
