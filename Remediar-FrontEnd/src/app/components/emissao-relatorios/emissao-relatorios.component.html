@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="col-md-2 mb-2">
-                <a routerLink="/" >
+                <a routerLink="/RelatorioRemedioDescartados" >
                     <div class="card card-custom text-center text-custom align-items-center" style="background-color: #eb2424;">
                         <img src="../../assets/imagens/descarte.png" class="card-img-top mt-3" >
                         <div class="card-body">
@@ -34,7 +34,7 @@
             </div>
             <div class="row cards mt-2">
                 <div class="col-md-2 mb-2">
-                    <a routerLink="/" >
+                    <a routerLink="/RelatoriosAnualMensal" >
                         <div class="card card-custom  text-center text-custom align-items-center" style="background-color: #20b2aa;">
                             <img src="../../assets/imagens/money.png" class="card-img-top mt-3">
                             <div class="card-body">
@@ -44,7 +44,7 @@
                     </a>
                 </div>
                 <div class="col-md-2 mb-6">
-                    <a routerLink="/" >
+                    <a routerLink="/RelatorioValoresArrecadados" >
                         <div class="card card-custom  text-center text-custom align-items-center" style="background-color:  #c9c621;">
                             <img src="../../assets/imagens/tabela.png" class="card-img-top mt-3">
                             <div class="card-body">
@@ -56,10 +56,5 @@
             </div>
         </div>
     </div>
-    <div class="row mb-2 divBotao">
-        <a routerLink (click)="goBack()">
-            <button>Voltar</button>
-        </a>
-        
-    </div>
+    <app-voltar></app-voltar>
 </div>

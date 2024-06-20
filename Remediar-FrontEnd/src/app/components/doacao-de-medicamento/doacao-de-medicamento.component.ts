@@ -19,10 +19,19 @@ export class DoacaoDeMedicamentoComponent implements OnInit {
 
   public doacao = new Doacao();
   doacaoForm!: FormGroup;
+  minDate: string = '';
 
   constructor(private formBuilder: FormBuilder,private doacaoService: DoacaoMedicamentoService, private router: Router,private localStorageService: LocalStorageService, private location: Location) { }
 
   ngOnInit() {
+
+    //Definindo que a data de validade deve ser maior que a data atual
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = ('0' + (today.getMonth() + 1)).slice(-2); 
+    const day = ('0' + today.getDate()).slice(-2); 
+    this.minDate = `${year}-${month}-${day}`;
+
     this.doacaoForm = this.formBuilder.group({
       nomeMedicamento : ['',Validators.required],
       qtdCaixas: ['',Validators.required],
