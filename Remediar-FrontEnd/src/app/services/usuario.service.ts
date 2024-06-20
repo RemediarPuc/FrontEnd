@@ -22,3 +22,5 @@ export class UsuarioService {
     return this.htppClient.get<Usuario>(url, { responseType: 'json' });
   }
 }
+
+//
