@@ -36,17 +36,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                <tr *ngFor="let medicamento of medicamentos">
+                    <td>{{ medicamento.nomeMedicamento }}</td>
+                    <td>{{ medicamento.quantidade }}</td>
+                    <td>{{ medicamento.peso }}</td>
+                    <td>{{ medicamento.dtVencimento}}</td>
                     <td id="btns">
                         <button type="button" class="btn btn-info">Editar</button>
-                        <button type="button" class="btn btn-dark">Dar baixa</button>
+                        <button type="button" class="btn btn-dark" (click)="darBaixa(medicamento.id)">Dar baixa</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Descartar</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" (click)="descartarMedicamento(medicamento.id)">Descartar</button>
                     </td>
                 </tr>
             </tbody>
