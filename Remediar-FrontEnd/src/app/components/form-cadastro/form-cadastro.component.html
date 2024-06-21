@@ -17,11 +17,20 @@
 
             <div class="entradaDados">
                 <label for="unidade">Unidade</label>
-                <input type="text" id="unidade"
+                <select id="inputComprimido" formControlName="unidade">
+                    <option value="Ampolas" selected>Ampolas</option>
+                    <option value="Cápsulas">Cápsulas</option>
+                    <option value="Comprimidos">Comprimidos</option>
+                    <option value="Gotas">Gotas</option>
+                    <option value="Injeções">Injeções</option>
+                    <option value="Mililitros (ml)">Mililitros (ml)</option>
+                    <option value="Pomadas ou cremes">Pomadas ou cremes</option>
+                </select>
+                <!-- <input type="text" id="unidade"
                     [ngClass]="{'inputError':formDir.submitted && registrationForm.controls['unidade'].hasError('required')}"
                     formControlName="unidade">
                 <p *ngIf="formDir.submitted && registrationForm.controls['unidade'].hasError('required')"
-                    class="mensagem-error">Informe a unidade</p>
+                    class="mensagem-error">Informe a unidade</p> -->
             </div>
 
             <div class="entradaDados">

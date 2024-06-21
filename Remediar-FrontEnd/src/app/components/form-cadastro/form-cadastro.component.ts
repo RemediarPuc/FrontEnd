@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NgIf, NgClass } from '@angular/common';
+import { Router } from '@angular/router';
 import { Medicamento } from '../../models/Medicamento';
 import { CadastroMedicamentoService } from '../../services/cadastro-medicamento.service';
 import { VoltarComponent } from "../voltar/voltar.component";
@@ -18,7 +19,7 @@ export class FormCadastroComponent {
     successRegistration: boolean = true;
     minDate: string = '';
   
-    constructor(private fb: FormBuilder, private cadastroService: CadastroMedicamentoService) {
+    constructor(private fb: FormBuilder, private router: Router, private cadastroService: CadastroMedicamentoService) {
       
 
       //Definindo que a data de validade deve ser maior que a data atual
@@ -30,7 +31,7 @@ export class FormCadastroComponent {
       
       this.registrationForm = this.fb.group({
         nomeMedicamento: ['', Validators.required],
-        unidade: ['', Validators.required],
+        unidade: ['Ampolas', Validators.required],
         quantidade: ['', [Validators.required, Validators.min(1)]],
         valor: ['', [Validators.required, Validators.min(0.01)]],
         descricao: ['', Validators.required],
@@ -45,6 +46,7 @@ export class FormCadastroComponent {
           response => {
             console.log('Medicamento cadastrado com sucesso:', response);
             this.successRegistration = true;
+            this.router.navigate(['/ControleEstoque']);
             // Aqui você pode adicionar lógica adicional após o cadastro, como redirecionamento ou mensagem de sucesso
           },
           error => {

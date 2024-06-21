@@ -9,7 +9,7 @@
     </div>
 
     <div id="titulo_tabela" class="borda_letra">
-        <h2>Estoque</h2>
+        <h2>Medicamentos no estoque</h2>
     </div>
     <div id="container_tabela">
         <table>
@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Quantidade</th>
-                    <th scope="col">Peso</th>
+                    <th scope="col">Unidade</th>
                     <th scope="col">Data de validade</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -27,11 +27,14 @@
                 <tr *ngFor="let medicamento of medicamentos">
                     <td>{{ medicamento.nomeMedicamento }}</td>
                     <td>{{ medicamento.quantidade }}</td>
-                    <td>{{ medicamento.peso }}</td>
+                    <td>{{ medicamento.unidade }}</td>
                     <td>{{ medicamento.dtVencimento | date : 'dd/MM/yyyy' }}</td>
                     <td id="btns">
                         <button type="button" class="btn btn-info">Editar</button>
-                        <button type="button" class="btn btn-dark" (click)="darBaixa(medicamento.id)">Dar baixa</button>
+                        @if(medicamento.quantidade > 0){
+                          <button type="button" class="btn btn-dark" (click)="darBaixa(medicamento.id)">Dar baixa</button>
+                        }
+                        
                     </td>
                     <td>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" (click)="descartarMedicamento(medicamento.id)">Descartar</button>
@@ -43,7 +46,7 @@
 
     <a href="CadastroMedicamentos">
         <div id="btnCadastrarNovo">
-            <button type="button" class="btn btn-warning">Cadastrar Produto</button>
+            <button type="button" class="btn btn-warning">Cadastrar Medicamento</button>
         </div>
     </a>
 
