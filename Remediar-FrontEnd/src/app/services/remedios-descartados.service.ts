@@ -8,12 +8,16 @@ import { MedicamentoDescartado } from '../models/MedicamentoDescartado';
   providedIn: 'root'
 })
 export class RemediosDescartadosService {
-  baseUrl = `${environment.baseUrlApi}/RelatorioRemedioDescartados`;
+  baseUrl = `${environment.baseUrlApi}/MedicamentoDescartado`;
 
   constructor(private http: HttpClient) { }
 
   getMedicamentosDescartados(): Observable<MedicamentoDescartado[]> {
     return this.http.get<MedicamentoDescartado[]>(`${this.baseUrl}`);
+  }
+
+  salvaRemediosDescartados(novoMedicamento:MedicamentoDescartado): Observable<MedicamentoDescartado> {
+    return this.http.post<MedicamentoDescartado>(`${this.baseUrl}`, novoMedicamento);
   }
   
 }

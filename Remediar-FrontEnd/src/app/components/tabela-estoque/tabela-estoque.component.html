@@ -3,10 +3,10 @@
 <app-header [title]="'Controle de Estoque'"></app-header>
 
 <main>
-    <div id="campo_pesquisa">
+    <!-- <div id="campo_pesquisa">
         <input type="text">
         <input type="button" value="Pesquisar">
-    </div>
+    </div> -->
 
     <div id="titulo_tabela" class="borda_letra">
         <h2>Medicamentos no estoque</h2>
@@ -30,7 +30,7 @@
                     <td>{{ medicamento.unidade }}</td>
                     <td>{{ medicamento.dtVencimento | date : 'dd/MM/yyyy' }}</td>
                     <td id="btns">
-                        <button type="button" class="btn btn-info">Editar</button>
+                        <!-- <button type="button" class="btn btn-info">Editar</button> -->
                         @if(medicamento.quantidade > 0){
                           <button type="button" class="btn btn-dark" (click)="darBaixa(medicamento.id)">Dar baixa</button>
                         }

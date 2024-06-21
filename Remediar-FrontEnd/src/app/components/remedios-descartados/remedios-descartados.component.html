@@ -23,9 +23,9 @@
             <tbody *ngFor="let medicamentoDescartados of medicamentosDescartados">
                 <tr>
                     <td>{{ medicamentoDescartados.id }}</td>
-                    <td>{{ medicamentoDescartados.medicamento.nomeMedicamento }}</td>
+                    <td>{{ medicamentoDescartados.nomeMedicamento }}</td>
                     <td>{{ medicamentoDescartados.qtdDescartada }}</td>
-                    <td>{{ medicamentoDescartados.valorDescartado }}</td>
+                    <td>{{ medicamentoDescartados.valorDescartado | currency:'BRL':'symbol':'1.2-2' }}</td>
                 </tr>
             </tbody>
         </table>

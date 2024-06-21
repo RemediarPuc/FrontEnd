@@ -5,6 +5,8 @@ import { EstoqueService } from '../../services/estoque.service';
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { Medicamento } from '../../models/Medicamento';
 import { VoltarComponent } from "../voltar/voltar.component";
+import {RemediosDescartadosService} from "../../services/remedios-descartados.service"
+import { MedicamentoDescartado } from '../../models/MedicamentoDescartado';
 
 
 @Component({
@@ -18,7 +20,7 @@ import { VoltarComponent } from "../voltar/voltar.component";
   
     medicamentos: any[] = []; // Array para armazenar os medicamentos do estoque
   
-    constructor(private estoqueService: EstoqueService) { }
+    constructor(private estoqueService: EstoqueService, private serviceMedDescartados: RemediosDescartadosService) { }
   
     ngOnInit(): void {
       this.carregarMedicamentos();
@@ -36,15 +38,33 @@ import { VoltarComponent } from "../voltar/voltar.component";
     }
 
     descartarMedicamento(id: number): void{
-        this.estoqueService.descartarMedicamento(id).subscribe(
-            () => {
-              console.log(`Medicamento com Id ${id} removido do estoque`);
-              this.medicamentos = this.medicamentos.filter(med => med.id !== id);
-            },
-            (error) => {
-              console.error(`Erro ao remover medicamento com Id ${id}`, error);
-            }
-          );
+        this.estoqueService.descartarMedicamento(id).subscribe(() =>{
+
+          const medicamento: Medicamento | undefined = this.medicamentos.find(med => med.id === id);
+  
+          if (medicamento) {
+            const medicamentoDescarte: MedicamentoDescartado = {
+              dtDescarte: new Date(),
+              nomeMedicamento: medicamento.nomeMedicamento,
+              dtVencimento: medicamento.dtVencimento,
+              qtdDescartada: medicamento.quantidade,
+              valorDescartado: medicamento.valor * medicamento.quantidade,
+              medicamento: medicamento
+            };
+        
+            this.serviceMedDescartados.salvaRemediosDescartados(medicamentoDescarte).subscribe({
+              next: () => {
+                console.log(`Medicamento com Id ${id} removido do estoque`);
+                this.medicamentos = this.medicamentos.filter(med => med.id !== id);
+              },
+              error: (error) => {
+                console.error(`Erro ao remover medicamento com Id ${id}`, error);
+              }
+            });
+          } else {
+            console.error(`Medicamento com Id ${id} não encontrado`);
+          }
+        });
     }
   
     darBaixa(id: number): void {

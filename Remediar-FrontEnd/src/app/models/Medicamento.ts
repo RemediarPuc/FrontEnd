@@ -1,7 +1,7 @@
 import { MedicamentoDescartado } from '../models/MedicamentoDescartado';
 
 export class Medicamento {
-    id: number = 0;
+    id?: number = 0;
     nomeMedicamento: string = '';
     unidade: string = '';
     quantidade: number = 0;
