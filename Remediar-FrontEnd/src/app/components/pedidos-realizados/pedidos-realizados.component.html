@@ -4,7 +4,7 @@
   <div class="row filtros justify-content-end">
     <div class="col-3">
       <label for="status">Status:</label>
-      <select class="select-custom" id="status" [(ngModel)]="statusSelecionado" (change)="filtraPedidos()">
+      <select class="select-custom" id="status" [(ngModel)]="filtroStatus" (change)="filtrarDoacoes()">
         <option value="Todos">Todos</option>
         <option value="Pendente">Pendente</option>
         <option value="Aprovado">Aprovado</option>
@@ -27,7 +27,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let pedido of pedidosFiltrados; let i = index" [ngClass]="{'pedidoConcluido': pedido.statusPedido === 'Concluido'}">
+          <tr *ngFor="let doacao of doacoesFiltradas; let i = index"
+            [ngClass]="{'pedidoConcluido': doacao.statusPedido === 'Concluido'}">
             <th scope="row">{{i + 1}}</th>
             <td>{{doacao.nomeMedicamento}}, {{doacao.unidade}}</td>
             <td>{{doacao.quantidade}}</td>

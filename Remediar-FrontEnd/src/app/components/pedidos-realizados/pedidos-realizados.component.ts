@@ -25,9 +25,9 @@ export class PedidosRealizadosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const userId = this.localStorageService.getUserId();
-    if (userId !== null) {
-      this.pedidoService.getPedidosPorUsuario(userId)
+    const usuario = this.localStorageService.getItem("Usuario");
+    if (usuario !== null) {
+      this.pedidoService.getPedidosPorUsuario(usuario.Id)
         .subscribe(
           (retorno) => {
             this.pedidos = retorno.data;
