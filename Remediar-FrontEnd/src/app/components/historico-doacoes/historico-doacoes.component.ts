@@ -3,6 +3,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HistoricoDoacoesService } from '../../services/historico-doacoes.service';
+import { LocalStorageService } from '../../services/local-storage-service.service'; // Importar o serviço de Local Storage
 
 @Component({
   selector: 'app-historico-doacoes',
@@ -18,21 +19,23 @@ export class HistoricoDoacoesComponent implements OnInit {
 
   constructor(
     private historicoDoacoesService: HistoricoDoacoesService,
-    private route: ActivatedRoute
+    private localStorageService: LocalStorageService
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.usuarioId = +params['usuarioId'];
+    this.usuarioId = this.localStorageService.getUserId();
+    if (this.usuarioId !== null) {
       this.historicoDoacoesService.getHistoricoDoacoesPorUsuario(this.usuarioId)
         .subscribe(
           (data) => {
             this.historicoDoacoes = data;
           },
           (error) => {
-            console.error("Erro ao obter histórico de doações:", error);
+            console.error("não foi possível obter histórico de doações:", error);
           }
         );
-    });
+    } else {
+      console.error('id não encotrado no localstorage');
+    }
   }
 }
