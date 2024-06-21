@@ -1,24 +1,32 @@
-<div class="historico-doacoes">
-  <h2>Histórico de Doações</h2>
+<body>
+  <header class="header">
+    <div class="logo">
+        <img src="assets/img/remediarLogo.jpg" alt="Remediar Logo">
+    </div>
+  </header>
 
-  <div class="container">
-    <div class="row">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Remédio</th>
-            <th scope="col">Data de Doação</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let doacao of historicoDoacoes; let i = index">
-            <th scope="row">{{ i + 1 }}</th>
-            <td>{{ doacao.nomeMedicamento }}</td>
-            <td>{{ doacao.dataDoacao | date: 'dd/MM/yyyy' }}</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="historico-doacoes">
+    <h2>Histórico de Doações</h2>
+
+    <div class="container">
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Remédio</th>
+              <th scope="col">Data de Doação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doacao of historicoDoacoes; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ doacao.nomeMedicamento }}</td>
+              <td>{{ doacao.dataDoacao | date: 'dd/MM/yyyy' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+</body>
