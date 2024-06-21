@@ -8,13 +8,14 @@ import { PedidosMedicamentosService } from '../../services/pedidos-medicamentos.
 import { Router } from '@angular/router';
 import { Pedido } from '../../models/Pedido';
 import { FormsModule } from '@angular/forms';
+import { VoltarComponent } from "../voltar/voltar.component";
 
 @Component({
     selector: 'app-pedidos',
     standalone: true,
     templateUrl: './pedidos.component.html',
     styleUrl: './pedidos.component.css',
-    imports: [HeaderComponent, FooterComponent, DatePipe,FormsModule, CommonModule]
+    imports: [HeaderComponent, FooterComponent, DatePipe, FormsModule, CommonModule, VoltarComponent]
 })
 export class PedidosComponent {
 

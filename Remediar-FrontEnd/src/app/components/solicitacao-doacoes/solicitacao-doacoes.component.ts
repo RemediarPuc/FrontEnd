@@ -5,13 +5,14 @@ import { CommonModule, DatePipe, Location} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from '../header/header.component';
+import { VoltarComponent } from "../voltar/voltar.component";
 
 @Component({
-  selector: 'app-solicitacao-doacoes',
-  standalone: true,
-  imports: [DatePipe,CommonModule,FormsModule,HeaderComponent],
-  templateUrl: './solicitacao-doacoes.component.html',
-  styleUrl: './solicitacao-doacoes.component.css'
+    selector: 'app-solicitacao-doacoes',
+    standalone: true,
+    templateUrl: './solicitacao-doacoes.component.html',
+    styleUrl: './solicitacao-doacoes.component.css',
+    imports: [DatePipe, CommonModule, FormsModule, HeaderComponent, VoltarComponent]
 })
 export class SolicitacaoDoacoesComponent {
 
