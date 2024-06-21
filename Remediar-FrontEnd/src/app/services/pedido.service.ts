@@ -14,4 +14,8 @@ export class PedidoService {
   getAllPedidos(): Observable<any> {
     return this.httpClient.get<any>(this.baseUrl);
   }
+
+  getPedidosPorUsuario(userId: number): Observable<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/usuario/${userId}`); // Corrigido para usar httpClient
+  }
 }
