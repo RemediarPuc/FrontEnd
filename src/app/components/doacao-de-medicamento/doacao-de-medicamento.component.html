@@ -14,7 +14,7 @@
             </div>
             <div class="col-5">
               <label for="exampleFormControlTextarea1" class="form-label second-field">Quantidade (Caixas)</label>
-              <input type="number" class="form-control second-field" id="exampleFormControlTextarea1" formControlName="qtdCaixas" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdCaixas'].hasError('required')}">
+              <input type="number" class="form-control second-field" id="exampleFormControlTextarea1" formControlName="qtdCaixas" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdCaixas'].hasError('required')}" min="1">
               <p style="margin-left: 68px;" *ngIf = "formDir.submitted && (doacaoForm.controls['qtdCaixas'].hasError('required'))" class = "mensagem-error">Informe a Quantidade de Caixas</p>
              
             </div>
@@ -22,7 +22,7 @@
           <div class="row form-row"> 
             <div class="col-5">
               <label for="exampleFormControlInput1" class="form-label">Quantidade de mg</label>
-              <input type="number" class="form-control" formControlName="qtdMg" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdMg'].hasError('required')}">
+              <input type="number" class="form-control" formControlName="qtdMg" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['qtdMg'].hasError('required')}" min="1">
               <p *ngIf = "formDir.submitted && (doacaoForm.controls['qtdMg'].hasError('required'))" class = "mensagem-error">Informe a Quantidade de Mg</p>
             </div>
   
@@ -30,7 +30,9 @@
   
             <div class="col-5">
               <label for="exampleFormControlInput1" class="form-label second-field">Data de Validade</label>
-              <input type="date" class="form-control second-field" id="exampleFormControlInput1" formControlName="dtValidade" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['dtValidade'].hasError('required')}">
+              <input type="date" class="form-control second-field" id="exampleFormControlInput1" formControlName="dtValidade"
+                [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['dtValidade'].hasError('required')}"
+                [min]="minDate">
               <p style="margin-left: 68px;" *ngIf = "formDir.submitted && (doacaoForm.controls['dtValidade'].hasError('required'))" class = "mensagem-error">Informe a Data Validade</p>
             </div>
           </div>
@@ -38,7 +40,8 @@
           <div class="row form-row"> 
             <div class="col-5">
               <label for="exampleFormControlInput1" class="form-label">Melhor dia e Horário para Retirada</label>
-              <input type="datetime-local" class="form-control" id="exampleFormControlInput1" formControlName="dtRetirada" [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['dtRetirada'].hasError('required')}">
+              <input type="datetime-local" class="form-control" id="exampleFormControlInput1" formControlName="dtRetirada"
+                [ngClass]="{'inputError':formDir.submitted && doacaoForm.controls['dtRetirada'].hasError('required')}">
               <p *ngIf = "formDir.submitted && (doacaoForm.controls['dtRetirada'].hasError('required'))" class = "mensagem-error">Informe a Data Retirada</p>            
             </div>
           </div>

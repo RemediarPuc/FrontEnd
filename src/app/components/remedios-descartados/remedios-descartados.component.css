@@ -1,9 +1,5 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-header, footer, main{
+
+.medicamentosDescartados{
     background-color: #B0E1E8;
     padding: 1cm;
 }
@@ -14,12 +10,7 @@ header, footer, main{
     1px 1px 0 #171a21
 }
 
-/* Cabeçalho */
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 #logo{
     width: 90px;
     height: 90px;
@@ -47,8 +38,8 @@ header{
 }
 
 /* Corpo */
-main{
-    
+.medicamentosDescartados{
+    position: fixed;
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -87,8 +78,3 @@ th{
     font-size: large;
 }
 
-/* Rodapé */
-footer{
-    display: flex;
-    justify-content: end;
-}

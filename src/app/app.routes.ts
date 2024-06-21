@@ -17,6 +17,8 @@ import { TabelaEstoqueComponent } from './components/tabela-estoque/tabela-estoq
 import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.component';
 import { ValoresArrecadadosComponent } from './components/valores-arrecadados/valores-arrecadados.component';
 import { RelatoriosAnualMensalComponent } from './components/relatorios-anual-mensal/relatorios-anual-mensal.component';
+import { HistoricoDoacoesComponent } from './components/historico-doacoes/historico-doacoes.component';
+import { PedidosRealizadosComponent } from './components/pedidos-realizados/pedidos-realizados.component';
 
 export const routes: Routes = [
     {
@@ -88,6 +90,15 @@ export const routes: Routes = [
     {
         path: 'RelatoriosAnualMensal',
         component: RelatoriosAnualMensalComponent
+    },
+
+    {
+        path: 'HistoricoDoacoes',
+        component: HistoricoDoacoesComponent
+    },
+    {
+        path: 'PedidosRealizados',
+        component: PedidosRealizadosComponent
     }
     
 ];

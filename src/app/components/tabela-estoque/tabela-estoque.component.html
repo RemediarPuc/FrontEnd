@@ -1,27 +1,15 @@
 
-<!-- <header>
-    <img src="../../assets/imagens/logo.png" alt="Logo Remediar" id="logo">
-    <nav>
-        <ul id="navegacao">
-            <a href=""><li class="borda_letra">Pedidos</li></a>
-            <a href=""><li class="borda_letra">Solicitações</li></a>
-            <a href=""><li class="borda_letra">Descartados</li></a>
-            <a href=""><li class="borda_letra">Relatórios</li></a>
-            <a href=""><li class="borda_letra">Histórico</li></a>
-        </ul>
-    </nav>
-</header> -->
 <div class="controleEstoque">
 <app-header [title]="'Controle de Estoque'"></app-header>
 
 <main>
-    <div id="campo_pesquisa">
+    <!-- <div id="campo_pesquisa">
         <input type="text">
         <input type="button" value="Pesquisar">
-    </div>
+    </div> -->
 
     <div id="titulo_tabela" class="borda_letra">
-        <h2>Estoque</h2>
+        <h2>Medicamentos no estoque</h2>
     </div>
     <div id="container_tabela">
         <table>
@@ -29,36 +17,41 @@
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Quantidade</th>
-                    <th scope="col">Peso</th>
+                    <th scope="col">Unidade</th>
                     <th scope="col">Data de validade</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                <tr *ngFor="let medicamento of medicamentos">
+                    <td>{{ medicamento.nomeMedicamento }}</td>
+                    <td>{{ medicamento.quantidade }}</td>
+                    <td>{{ medicamento.unidade }}</td>
+                    <td>{{ medicamento.dtVencimento | date : 'dd/MM/yyyy' }}</td>
                     <td id="btns">
-                        <button type="button" class="btn btn-info">Editar</button>
-                        <button type="button" class="btn btn-dark">Dar baixa</button>
+                        <!-- <button type="button" class="btn btn-info">Editar</button> -->
+                        @if(medicamento.quantidade > 0){
+                          <button type="button" class="btn btn-dark" (click)="darBaixa(medicamento.id)">Dar baixa</button>
+                        }
+                        
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Descartar</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" (click)="descartarMedicamento(medicamento.id)">Descartar</button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <div id="btnCadastrarNovo">
-        <button type="button" class="btn btn-warning">Cadastrar novo</button>
-    </div>
+    <a href="CadastroMedicamentos">
+        <div id="btnCadastrarNovo">
+            <button type="button" class="btn btn-warning">Cadastrar Medicamento</button>
+        </div>
+    </a>
 
 </main>
-
+<app-voltar></app-voltar>
 <!-- Modal confirmação -->
 <div class="modal" id="myModal" tabindex="-1" role="dialog"> 
     <div class="modal-dialog modal-dialog-centered mx-auto" role="document">
@@ -79,7 +72,5 @@
       </div>
     </div>
   </div>
-
-<app-footer></app-footer>
 
 </div>

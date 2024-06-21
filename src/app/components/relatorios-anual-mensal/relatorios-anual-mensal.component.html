@@ -1,38 +1,33 @@
 <div class="emitirRelatorios">
     <app-header [title]="'Emissão de Relatórios Mensal/Anual'"></app-header>
-    
-    <div class="row corpo">
-        <main>
-            <table>
-                <tr>
-                    <ol>
-                        <h1 class="titleLista">Valor Total/Mensal</h1>
-                        <div class="card card-custom  text-center text-custom align-items-center" style="background-color: #106C9E  ;">
-                            <div class="card-body ">
-                                <h2 class="valor">0,00 R$</h2>
+    <main class="container">
+        <div class="row corpo">
+                <table class="row">
+                    <tr class="col-4">
+                        <ol>
+                            <h1 class="titleLista">Valor Total/Mensal</h1>
+                            <div class="card card-custom  text-center text-custom align-items-center" style="background-color: #106C9E  ;">
+                                <div class="card-body ">
+                                    <h2 class="valor">0,00 R$</h2>
+                                </div>
                             </div>
-                        </div>
-                    </ol>
-                </tr>
+                        </ol>
+                    </tr>
 
-                <tr>                    
-                    <ol>                
-                        <h1 class="titleLista">Valor Total/Anual</h1>
-                        <div class="card card-custom  text-center text-custom align-items-center" style="background-color: #106C9E  ;">
-                            <div class="card-body ">
-                                <h2 class="valor">0,00 R$</h2>
+                    <tr class="col-4">                    
+                        <ol>                
+                            <h1 class="titleLista">Valor Total/Anual</h1>
+                            <div class="card card-custom  text-center text-custom align-items-center" style="background-color: #106C9E  ;">
+                                <div class="card-body ">
+                                    <h2 class="valor">0,00 R$</h2>
+                                </div>
                             </div>
-                        </div>
-                    </ol>
-                </tr>
-            </table>
-        </main>
+                        </ol>
+                    </tr>
+                </table>
+            
 
-    </div>
-    <div class="row mb-2 divBotao">
-        <a routerLink (click)="goBack()">
-            <button>Voltar</button>
-        </a>
-        
-    </div>
+        </div>
+    </main>
+    <app-voltar></app-voltar>
 </div>

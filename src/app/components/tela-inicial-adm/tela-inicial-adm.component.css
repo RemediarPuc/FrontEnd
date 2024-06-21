@@ -4,38 +4,6 @@ body {
   margin: 0;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #00aaff;
-  padding: 5px 20px;
-}
-
-.header .logo img {
-  height: 60px;
-}
-
-.header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.header nav ul li {
-  display: inline;
-  font-size: 20px;
-}
-
-.header nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-.user_login .icon{
-  width: 40px;
-  height: 40px;
-  fill: #ffffff;
-}
 
 .dashboard {
   display: flex;

@@ -1,47 +1,79 @@
-<app-header [title]="'Cadastro de Medicamentos'"></app-header>
 
-<main>
-    <a href="">
-        <button type="button" class="btn btn-primary">Voltar</button>
-    </a>
 
+<div class="cadastro">
+    <app-header [title]="'Cadastro de Medicamentos'"></app-header>
     <div id="formulario">
-        <form id="formCadastro">
-            <h3 class="borda_letra">Cadastrar Produto</h3>
-    
+        <form (ngSubmit)="submit()" [formGroup]="registrationForm" #formDir="ngForm" id="formCadastro">
+            <h3 class="borda_letra">Cadastrar Medicamento</h3>
+
             <div class="entradaDados">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="">
+                <label for="nomeMedicamento">Nome</label>
+                <input type="text" id="nomeMedicamento"
+                    [ngClass]="{'inputError':formDir.submitted && registrationForm.controls['nomeMedicamento'].hasError('required')}"
+                    formControlName="nomeMedicamento">
+                <p *ngIf="formDir.submitted && registrationForm.controls['nomeMedicamento'].hasError('required')"
+                    class="mensagem-error">Informe o nome</p>
             </div>
-    
+
+            <div class="entradaDados">
+                <label for="unidade">Unidade</label>
+                <select id="inputComprimido" formControlName="unidade">
+                    <option value="Ampolas" selected>Ampolas</option>
+                    <option value="Cápsulas">Cápsulas</option>
+                    <option value="Comprimidos">Comprimidos</option>
+                    <option value="Gotas">Gotas</option>
+                    <option value="Injeções">Injeções</option>
+                    <option value="Mililitros (ml)">Mililitros (ml)</option>
+                    <option value="Pomadas ou cremes">Pomadas ou cremes</option>
+                </select>
+                <!-- <input type="text" id="unidade"
+                    [ngClass]="{'inputError':formDir.submitted && registrationForm.controls['unidade'].hasError('required')}"
+                    formControlName="unidade">
+                <p *ngIf="formDir.submitted && registrationForm.controls['unidade'].hasError('required')"
+                    class="mensagem-error">Informe a unidade</p> -->
+            </div>
+
             <div class="entradaDados">
                 <label for="quantidade">Quantidade</label>
-                <input type="number" name="quantidade" id="">
-            </div>
-    
-            <div class="entradaDados">
-                <label for="peso">Peso</label>
-                <input type="number" name="peso" id="">
-            </div>
-    
-            <div class="entradaDados">
-                <label for="dataValidade">Data de validade</label>
-                <input type="date" name="dataValidade" id="">
+                <input type="number" id="quantidade"
+                    [ngClass]="{'inputError':formDir.submitted && registrationForm.controls['quantidade'].hasError('required') || registrationForm.controls['quantidade'].hasError('min')}"
+                    formControlName="quantidade" min="1">
+                <p *ngIf="formDir.submitted && (registrationForm.controls['quantidade'].hasError('required') || registrationForm.controls['quantidade'].hasError('min'))"
+                    class="mensagem-error">Informe uma quantidade válida</p>
             </div>
 
-            <button type="button" class="btn btn-secondary">Cadastrar</button>
+            <div class="entradaDados">
+                <label for="valor">Valor</label>
+                <input type="number" id="valor"
+                    [ngClass]="{'inputError':formDir.submitted && registrationForm.controls['valor'].hasError('required') || registrationForm.controls['valor'].hasError('min')}"
+                    formControlName="valor" min="1">
+                <p *ngIf="formDir.submitted && (registrationForm.controls['valor'].hasError('required') || registrationForm.controls['valor'].hasError('min'))"
+                    class="mensagem-error">Informe um valor válido</p>
+            </div>
+
+            <div class="entradaDados">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao"
+                    [ngClass]="{'inputError':formDir.submitted && registrationForm.controls['descricao'].hasError('required')}"
+                    formControlName="descricao">
+                <p *ngIf="formDir.submitted && registrationForm.controls['descricao'].hasError('required')"
+                    class="mensagem-error">Informe a descrição</p>
+            </div>
+
+            <div class="entradaDados">
+                <label for="dtVencimento">Data de validade</label>
+                <input type="date" id="dtVencimento"
+                    [ngClass]="{'inputError':formDir.submitted && registrationForm.controls['dtVencimento'].hasError('required')}"
+                    formControlName="dtVencimento" [min]="minDate">
+                <p *ngIf="formDir.submitted && registrationForm.controls['dtVencimento'].hasError('required')"
+                    class="mensagem-error">Informe a data de validade</p>
+            </div>
+
+            <p *ngIf="!successRegistration" class="mensagem-error">Erro no cadastro, verifique os dados e tente
+                novamente</p>
+
+            <button type="submit" class="btn btn-secondary">Cadastrar</button>
         </form>
     </div>
-
-</main>
-
-<footer>
-    <div id="logo-social-area">
-        <img src="../../assets/imagens/logo.png" alt="Logo Remediar" id="logo">
-        <div id="redes-sociais">
-            <a href="" target="_blank"><i></i></a>
-            <a href="" target="_blank"><i></i></a>
-            <a href="" target="_blank"><i></i></a>
-        </div>
-    </div>
-</footer>
+    <app-voltar></app-voltar>
+</div>

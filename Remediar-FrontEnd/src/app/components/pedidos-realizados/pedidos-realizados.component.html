@@ -1,0 +1,48 @@
+<div class="solicitacoes">
+  <app-header [title]="'Pedidos Realizados'"></app-header>
+
+  <div class="row filtros justify-content-end">
+    <div class="col-3">
+      <label for="status">Status:</label>
+      <select class="select-custom" id="status" [(ngModel)]="filtroStatus" (change)="filtrarDoacoes()">
+        <option value="Todos">Todos</option>
+        <option value="Pendente">Pendente</option>
+        <option value="Aprovado">Aprovado</option>
+        <option value="Concluido">Concluído</option>
+        <option value="Reprovado">Reprovado</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col-1">#</th>
+            <th scope="col-3">Remédio</th>
+            <th scope="col-1">Quantidade Caixas</th>
+            <th scope="col-6">Endereço Retirada</th>
+            <th scope="col-1">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doacao of doacoesFiltradas; let i = index"
+            [ngClass]="{'pedidoConcluido': doacao.statusPedido === 'Concluido'}">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{doacao.nomeMedicamento}}, {{doacao.unidade}}</td>
+            <td>{{doacao.quantidade}}</td>
+            <td>{{doacao.endereco}}</td>
+            <td [ngClass]="{'pedidoConcluido': doacao.statusPedido === 'Concluido', 'pedidoReprovado': doacao.statusPedido === 'Reprovado', 'bg-warning': doacao.statusPedido === 'Pendente', 'pedidoAprovado': doacao.statusPedido === 'Aprovado'}">{{doacao.statusPedido}}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row mb-2 divBotao">
+      <a routerLink (click)="goBack()">
+        <button class="btn-voltar">Voltar</button>
+      </a>
+    </div>
+  </div>
+</div>
