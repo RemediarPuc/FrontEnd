@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-root',
