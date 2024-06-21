@@ -4,7 +4,7 @@
   <div class="row filtros justify-content-end">
     <div class="col-3">
       <label for="status">Status:</label>
-      <select class="select-custom" id="status" [(ngModel)]="filtroStatus" (change)="filtrarDoacoes()">
+      <select class="select-custom" id="status" [(ngModel)]="statusSelecionado" (change)="filtraPedidos()">
         <option value="Todos">Todos</option>
         <option value="Pendente">Pendente</option>
         <option value="Aprovado">Aprovado</option>
@@ -21,23 +21,26 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Remédio</th>
-            <th scope="col">Quantidade Caixas</th>
-            <th scope="col">Endereço Retirada</th>
+            <th scope="col">Dosagem</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Telefone</th>
             <th scope="col">Data de Retirada</th>
             <th scope="col">Status</th>
             <th scope="col">Atualizar Status</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let doacao of doacoesFiltradas; let i = index" [ngClass]="{'pedidoConcluido': doacao.statusDoacao === 'Concluido'}">
+          <tr *ngFor="let pedido of pedidosFiltrados; let i = index" [ngClass]="{'pedidoConcluido': pedido.statusPedido === 'Concluido'}">
             <th scope="row">{{i + 1}}</th>
-            <td>{{doacao.nomeMedicamento}}</td>
-            <td>{{doacao.qtdCaixas}}</td>
-            <td>{{doacao.usuario.nome}} - ({{doacao.usuario.telefone}})</td>
-            <td>{{doacao.usuario.rua}}, {{doacao.usuario.numero}} - {{doacao.usuario.bairro}}</td>
-            <td>{{doacao.dtRetirada | date : 'dd/MM/yyyy - hh:mm'}}</td>
-            <td [ngClass]="{'pedidoConcluido': doacao.statusDoacao === 'Concluido', 'pedidoReprovado': doacao.statusDoacao === 'Reprovado', 'bg-warning': doacao.statusDoacao === 'Pendente', 'pedidoAprovado': doacao.statusDoacao === 'Aprovado'}">{{doacao.statusDoacao}}</td>
-            <td></td>
+            <td>{{pedido.nomeMedicamento}}</td>
+            <td>{{pedido.dosagem}}</td>
+            <td>{{pedido.quantidade}}</td>
+            <td>{{pedido.endereco}}</td>
+            <td>{{pedido.telefone}}</td>
+            <td>{{pedido.dataRetirada | date : 'dd/MM/yyyy - hh:mm'}}</td>
+            <td [ngClass]="{'pedidoConcluido': pedido.statusPedido === 'Concluido', 'pedidoReprovado': pedido.statusPedido === 'Reprovado', 'bg-warning': pedido.statusPedido === 'Pendente', 'pedidoAprovado': pedido.statusPedido === 'Aprovado'}">{{pedido.statusPedido}}</td>
+            <td><button (click)="atualizaStatus(pedido)">Atualizar</button></td>
           </tr>
         </tbody>
       </table>

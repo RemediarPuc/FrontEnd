@@ -3,6 +3,7 @@ import { CommonModule, DatePipe, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { PedidoService } from '../../services/pedido.service';
+import { LocalStorageService } from '../../services/local-storage-service.service'; // Importe o serviço de Local Storage
 
 @Component({
   selector: 'app-pedidos-realizados',
@@ -17,20 +18,29 @@ export class PedidosRealizadosComponent implements OnInit {
   public doacoesFiltradas: any[] = [];
   public filtroStatus: string = 'Todos';
 
-  constructor(private pedidoService: PedidoService, private location: Location) { }
+  constructor(
+    private pedidoService: PedidoService,
+    private location: Location,
+    private localStorageService: LocalStorageService
+  ) { }
 
   ngOnInit(): void {
-    this.pedidoService.getAllPedidos()
-      .subscribe(
-        (retorno) => {
-          this.pedidos = retorno.data;
-          this.doacoesFiltradas = retorno.data;
-          this.filtrarDoacoes();
-        },
-        (error) => {
-          console.log("Erro: ", error);
-        }
-      );
+    const userId = this.localStorageService.getUserId();
+    if (userId !== null) {
+      this.pedidoService.getPedidosPorUsuario(userId)
+        .subscribe(
+          (retorno) => {
+            this.pedidos = retorno.data;
+            this.doacoesFiltradas = retorno.data;
+            this.filtrarDoacoes();
+          },
+          (error) => {
+            console.log("Erro: ", error);
+          }
+        );
+    } else {
+      console.error('User ID not found in Local Storage');
+    }
   }
 
   filtrarDoacoes(): void {
