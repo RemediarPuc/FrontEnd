@@ -38,7 +38,7 @@ export class PedidosRealizadosComponent implements OnInit {
       if (this.filtroStatus === 'Todos') {
         this.doacoesFiltradas = this.pedidos;
       } else {
-        this.doacoesFiltradas = this.pedidos.filter(x => x.statusDoacao === this.filtroStatus);
+        this.doacoesFiltradas = this.pedidos.filter(x => x.statusPedido === this.filtroStatus);
       }
     }
   }
