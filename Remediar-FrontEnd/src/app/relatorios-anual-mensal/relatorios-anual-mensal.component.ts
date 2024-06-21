@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-relatorios-anual-mensal',
@@ -16,4 +16,7 @@ export class RelatoriosAnualMensalComponent {
       this.router.navigate(['/']); // Navega para a rota anterior
     }
 
+    ngOnInit(): void {
+
+    }
 }
