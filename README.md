@@ -18,7 +18,14 @@ O objetivo do trabalho é criar um sistema eficiente para substituir os métodos
 * Maria Inês Lage de Paula
 
 ## Links
-Link para o sistema: 
-https://remediar.vercel.app/
+**Api backend:** https://remediar.azurewebsites.net/swagger/index.html
 
-Api backend: https://remediar.azurewebsites.net/swagger/index.html
+**Link para o sistema:** https://remediar.vercel.app/
+
+**Acesso para o administrador:**
+
+login: admin@gmail.com
+
+senha: adminremediar
+
+
